@@ -3,25 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .blue-btn {
+    @apply  bg-gradient-to-l from-sky-300 to-sky-700 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-md sm:text-lg shadow-md;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .white-btn {
+    @apply bg-white py-3 sm:py-4 px-4 sm:px-6 rounded-md sm:text-lg shadow-md;
+  }
+  .form-btn {
+    @apply bg-gradient-to-l from-sky-300 to-sky-700 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-md sm:text-lg shadow-md w-full;
+  }
+  
+  .container {
+    @apply w-[90%] sm:w-[85%] mx-auto;
+  }
+  
 }
