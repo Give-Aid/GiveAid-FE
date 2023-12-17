@@ -8,18 +8,117 @@
 }
 
 @layer components {
+
+  /* typography */
+  .text-gradient {
+    @apply bg-gradient-to-t bg-clip-text text-transparent
+  }
+  /* buttons */
   .blue-btn {
-    @apply  bg-gradient-to-l from-sky-300 to-sky-700 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-md sm:text-lg shadow-md;
+    @apply bg-gradient-to-b from-sky-300 to-sky-700 text-white py-2 md:py-[14px] px-4 md:px-6 rounded-md md:text-lg shadow-md;
   }
+
   .white-btn {
-    @apply bg-white py-3 sm:py-4 px-4 sm:px-6 rounded-md sm:text-lg shadow-md;
+    @apply bg-white py-2 md:py-4 px-4 md:px-6 rounded-md md:text-lg shadow-md;
   }
+
+  .golden-btn {
+    @apply bg-gradient-to-b from-yellow-400 to-yellow-600 text-white py-2 md:py-4 px-4 md:px-6 rounded-md md:text-lg shadow-md
+  }
+
   .form-btn {
-    @apply bg-gradient-to-l from-sky-300 to-sky-700 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-md sm:text-lg shadow-md w-full;
+    @apply bg-gradient-to-l from-sky-300 to-sky-700 text-white py-3 md:py-4 px-4 md:px-6 rounded-md md:text-lg shadow-md w-full;
   }
-  
+
+  .signup {
+    @apply bg-white rounded-full py-1 sm:py-2 px-2 sm:px-4 text-black
+  }
+
+  /* container */
   .container {
-    @apply w-[90%] sm:w-[85%] mx-auto;
+    @apply w-[95%] md:w-[90%] mx-auto max-w-screen-xl;
   }
-  
+
+  /* navbar */
+  .nav {
+    @apply container flex items-center pt-4 justify-between text-white font-[400] text-[14px] relative
+  }
+
+  .avatar {
+    @apply bg-white rounded-full focus:ring-2 p-2 border border-sky-200 z-50
+  }
+
+  .default-avatar {
+    @apply relative w-7 h-7 overflow-hidden bg-gray-100 rounded-full
+  }
+
+  .hambuger {
+    @apply inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-950 focus:outline-none focus:ring-2 focus:ring-gray-200
+  }
+
+  .dropdown {
+    @apply z-50 top-20 right-0 absolute my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow
+  }
+
+  .dropdown-li {
+    @apply block px-4 py-2 text-sm hover:bg-gray-100
+  }
+
+  .navdropdown {
+    @apply items-center absolute justify-between w-full md:hidden top-20
+  }
+
+  .navdropdown-ul {
+    @apply flex flex-col font-medium p-4 md:p-0 mt-4 border-2 border-gray-100 rounded-lg bg-white shadow
+  }
+
+  .navdropdown-li {
+    @apply block py-2 px-3 rounded hover:bg-gray-100
+  }
+
+  /* footer */
+  .footer {
+    @apply bg-black text-white w-[100vw]
+  }
+
+  .footer-links {
+    @apply flex flex-wrap justify-center items-center text-sm gap-3 text-white font-inter font-[300] my-10
+  }
+
+  .footer-bottom {
+    @apply sm:flex sm:justify-between grid justify-center gap-2 text-center font-thin text-sm text-gray-400 mt-7
+  }
+
+  /* fundraiser card */
+  .card {
+    @apply w-[260px] md:w-[340px] bg-white border p-1 border-gray-200 hover:border-sky-500 rounded-lg shadow-lg hover:translate-y-[-3px] hover:transition duration-500 ease-in-out flex flex-col
+  }
+
+  .fundraiser-card-Image {
+    @apply rounded-t-lg w-[250px] md:w-[330px] h-[200px] object-cover relative border border-sky-100
+  }
+
+  .tags {
+    @apply border-y border-gray-300 flex p-[5px] mb-2 items-center gap-3 h-[33px]
+  }
+
+  .tag {
+    @apply flex-shrink-0 px-2 py-[2px] text-[10px] border border-sky-950 w-fit rounded-full
+  }
+  .fundraiser-card-duration {
+    @apply text-[10px] md:text-[12px] gap-1 text-gray-400 flex items-center
+  }
+
+  .fundraiser-card-progress-g {
+    @apply w-full h-[6px] bg-gray-400 rounded-full my-1
+  }
+
+  .fundraiser-card-progress-b {
+    @apply w-[90%] h-[6px] bg-gradient-to-l from-sky-300 to-sky-700 rounded-full
+  }
+
+}
+
+.removeScrollBar::-webkit-scrollbar {
+  display: none;
 }

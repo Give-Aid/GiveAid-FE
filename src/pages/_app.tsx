@@ -1,22 +1,35 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-
 import { Poppins, Inter } from "next/font/google";
+import { AppPropsWithLayout } from "@/utils/types";
+import Layout from "@/modules/layout";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
-  variable: '--font-poppins'
+  variable: "--font-poppins",
 });
 
 const inter = Inter({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <main className={poppins.className}>
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const { isAuthPage, name, title } = Component;
+ 
+
+  let page = (
+    <Layout title={title || name}>
       <Component {...pageProps} />
-    </main>
+    </Layout>
   );
+
+  // if (isAuthPage) {
+  //   page = (
+  //     <DashboardLayout title={title || name}>
+  //       <Component {...pageProps} />
+  //     </DashboardLayout>
+  //   );
+  // }
+  return <main className={poppins.className}>{page}</main>;
 }
