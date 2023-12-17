@@ -1,6 +1,7 @@
 import React from "react";
 import WhatWeDo1 from "./whatWeDo1";
 import WhatWeDo2 from "./whatWeDo2";
+import HowItWorks from "./howItWorks";
 import Quote from "../quote";
 
 type Props = {};
@@ -9,15 +10,15 @@ const Overview = (props: Props) => {
   const quotes = [
     {
       quote:
-        "The beliver's shade on the Day of Ressurection will be their charity",
-      quoter: "- Prophet Muhammad (SAW) [Tirmidhi]",
-      image: "/images/pbuh.png",
+        "You shall not attain Righteousness/Piety until you spend out of what you love. And whatever you spend, truly ALLAH knows it",
+      quoter: "- Qur'an [3:92]",
+      image: "/images/Allah.png",
     },
     {
       quote:
-        "ALLAH said: Spend in charity, O son of Adam, and I will spend on you",
-      quoter: "- Prophet Muhammad (SAW) [Bukari wa Muslim]",
-      image: "/images/Allah.png",
+        "The beliver's shade on the Day of Ressurection will be their charity",
+      quoter: "- Prophet Muhammad (SAW) [Tirmidhi]",
+      image: "/images/pbuh.png",
     },
   ];
   return (
@@ -41,6 +42,7 @@ const Overview = (props: Props) => {
         </div>
       </div>
       <WhatWeDo1 />
+      <HowItWorks />
       <WhatWeDo2 />
       <Quote quote={quotes[1]} />
       <div className="mt-10 text-left bg-sky-950 py-7 md:py-20 ">
@@ -53,12 +55,17 @@ const Overview = (props: Props) => {
               joy
             </p>
             <h3 className="my-5 text-[28px] font-[600] text-sky-100">
-              Let&apos;s help the helpless. Let&apos;s make the world better together
+              Let&apos;s help the helpless. Let&apos;s make the world better
+              together
             </h3>
             <button className="white-btn font-[500]">Donate Now</button>
           </div>
           <div className="mt-5 md:mt-0">
-            <img src="/images/giving-love.png" alt="help" className="w-[100px] md:w-full" />
+            <img
+              src="/images/giving-love.png"
+              alt="help"
+              className="w-[100px] md:w-full"
+            />
           </div>
         </div>
       </div>
