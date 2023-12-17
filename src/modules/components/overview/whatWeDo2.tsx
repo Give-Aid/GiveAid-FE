@@ -71,7 +71,7 @@ const WhatWeDo2 = (props: Props) => {
       </div>
       <div className="flex flex-wrap md:w-[800px] w-[90%] mx-auto gap-3 space-y-2 md:gap-12 mt-7 justify-center">
         {icons.map((icon) => (
-          <div className="w-[120px] flex flex-col items-center">
+          <div key={icon.alt} className="w-[120px] flex flex-col items-center">
             <img
               src={icon.src}
               className="w-16 md:w-[90px] h-16 md:h-[90px]"

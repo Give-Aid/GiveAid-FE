@@ -17,7 +17,7 @@ const Quote = ({quote}: Props) => {
       <blockquote className="text-[14px] sm:text-xl italic font-semibold text-sky-950 w-[70%]">
         <QuoteMark />
         <p className="mb-4 sm:tracking-wide">
-          "{quote.quote}"
+        &quot;{quote.quote}&quot;
         </p>
         <p>{quote.quoter}</p>
       </blockquote>

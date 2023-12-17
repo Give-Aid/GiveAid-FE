@@ -15,7 +15,7 @@ const Footer = (props: Props) => {
                 <img
                   src="/images/logowhite.png"
                   className="w-[250px]"
-                  alt="Flowbite Logo"
+                  alt="Give aid"
                 />
               </Link>
               <div className="flex gap-3 justify-center h-5 mb-5">

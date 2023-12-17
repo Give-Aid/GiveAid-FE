@@ -53,12 +53,12 @@ const Overview = (props: Props) => {
               joy
             </p>
             <h3 className="my-5 text-[28px] font-[600] text-sky-100">
-              Let's help the helpless. Let's make the world better together
+              Let&apos;s help the helpless. Let&apos;s make the world better together
             </h3>
             <button className="white-btn font-[500]">Donate Now</button>
           </div>
           <div className="mt-5 md:mt-0">
-            <img src="/images/giving-love.png" alt="help" className="w-[100px]" />
+            <img src="/images/giving-love.png" alt="help" className="w-[100px] md:w-full" />
           </div>
         </div>
       </div>

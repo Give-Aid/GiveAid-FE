@@ -27,11 +27,14 @@ const FundraisersCard = (props: Props) => {
       </Link>
 
       <div className="flex gap-3 items-center h-10 px-2 md:px-3">
-        <img
-          src="/images/icont.png"
-          className="h-6 w-6 border border-sky-200 rounded-full p-[1px]"
-          alt="fundraiser logo"
-        />
+        <div className="relative h-6 w-6  border border-sky-200 rounded-full">
+          <Image
+            layout="fill"
+            objectFit="cover"
+            src="/images/icont.png"
+            alt="fundraiser logo"
+          />
+        </div>
         <div className="font-[400] text-[14px] font-inter">
           Give Aid Foundation
         </div>

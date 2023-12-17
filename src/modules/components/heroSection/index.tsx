@@ -14,7 +14,7 @@ const HeroSection = (props: Props) => {
             </span>
           </h1>
           <h1 className="sm:text-[24px] text-[20px] font-[400] text-white ">
-            Let's make the world better together
+            Let&apos;s make the world better together
           </h1>
           <div className="flex flex-col gap-3 mt-10">
             <button className="white-btn w-fit">One Time Donation</button>
