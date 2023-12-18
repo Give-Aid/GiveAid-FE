@@ -91,11 +91,11 @@
 
   /* fundraiser card */
   .card {
-    @apply w-[260px] md:w-[340px] bg-white border p-1 border-gray-200 hover:border-sky-500 rounded-lg shadow-lg hover:translate-y-[-3px] hover:transition duration-500 ease-in-out flex flex-col
+    @apply w-[290px] md:w-[340px] bg-white border p-1 border-gray-200 hover:border-sky-500 rounded-lg shadow-lg hover:translate-y-[-3px] hover:transition duration-500 ease-in-out flex flex-col
   }
 
   .fundraiser-card-Image {
-    @apply rounded-t-lg w-[250px] md:w-[330px] h-[200px] object-cover relative border border-sky-100
+    @apply rounded-t-lg w-[280px] md:w-[330px] h-[200px] object-cover relative border border-sky-100
   }
 
   .tags {
@@ -121,4 +121,9 @@
 
 .removeScrollBar::-webkit-scrollbar {
   display: none;
+}
+
+button {
+  outline: none;
+  -webkit-touch-callout: none;
 }

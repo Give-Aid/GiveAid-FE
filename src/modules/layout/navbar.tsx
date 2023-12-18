@@ -66,7 +66,7 @@ const Navbar = (props: Props) => {
             </div>
           </div>
 
-          <div className="flex items-center md:w-[350px] w-[full] space-x-3 justify-end">
+          <div className="flex items-center md:w-[350px] w-[full] space-x-3 justify-end mr-3">
             {isUser ? (
               <button
                 type="button"
@@ -84,7 +84,7 @@ const Navbar = (props: Props) => {
                 </div>
               </button>
             ) : (
-              <div className="gap-2 md:gap-3 justify-end flex z-50">
+              <div className="gap-3 justify-end flex z-50">
                 <button>Sign In</button>
                 <button className="signup">Sign Up</button>
               </div>
@@ -98,8 +98,8 @@ const Navbar = (props: Props) => {
           {/* Hamburger */}
           {showNav && <MobileNav />}
         </div>
-        <div className="flex justify-end w-full mr-2">
-          <button type="button" className="hambuger my-nav" onClick={openNav}>
+        <div className="flex justify-end w-full">
+          <button type="button" className="hambuger my-nav mr-4" onClick={openNav}>
             <Hamburger />
           </button>
         </div>
