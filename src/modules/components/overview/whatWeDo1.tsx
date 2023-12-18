@@ -8,9 +8,9 @@ type Props = {};
 
 const WhatWeDo1 = (props: Props) => {
   return (
-    <div className="grid md:grid-cols-2 gap-10 mt-10 container">
+    <div className="grid md:grid-cols-2 gap-14 mt-10 container">
       <div className="flex flex-col items-center">
-        <p className="text-center text-[26px] font-[700] text-gradient from-sky-200 to-sky-600">
+        <p className="heading-gradient">
           For Donors
         </p>
         <div className="mt-5 grid gap-5">
@@ -65,8 +65,8 @@ const WhatWeDo1 = (props: Props) => {
           <p className="font-bold text-lg">Donate and Make a Difference</p><button className="blue-btn ">Support Now</button>
         </div>
       </div>
-      <div>
-        <p className="text-center text-[26px] font-[700] text-gradient from-sky-200 to-sky-600">
+      <div className="flex flex-col items-center">
+        <p className="heading-gradient">
           For Organizations
         </p>
         <div className="mt-5 grid gap-5">

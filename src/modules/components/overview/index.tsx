@@ -10,7 +10,7 @@ const Overview = (props: Props) => {
   const quotes = [
     {
       quote:
-        "You shall not attain Righteousness/Piety until you spend out of what you love. And whatever you spend, truly ALLAH knows it",
+        "By no means shall you attain Righteousness/Piety until you give out of that which you love, And whatever you give, truly ALLAH knows it",
       quoter: "- Qur'an [3:92]",
       image: "/images/Allah.png",
     },

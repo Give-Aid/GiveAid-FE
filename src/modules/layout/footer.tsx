@@ -8,7 +8,7 @@ const Footer = (props: Props) => {
   return (
     <>
       <footer className="footer">
-        <div className="w-full max-w-screen-xl mx-auto p-4 md:p-10">
+        <div className="w-full max-w-screen-xl mx-auto p-4 sm:p-10">
           <div className="sm:flex sm:items-center sm:justify-between">
             <div>
               <Link href="/" className="flex justify-center mb-5">
@@ -41,24 +41,29 @@ const Footer = (props: Props) => {
             </div>
             <ul className="footer-links">
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="/about" className="hover:underline">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   How It Works
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:underline">
                   Organizations
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="#" className="hover:underline">
                   Fundraisers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
