@@ -77,7 +77,7 @@ const Footer = (props: Props) => {
                 Privacy Policy
               </Link>
             </div>
-            <div>© 2023 Give Aid. Built in this life for the next.</div>
+            <div>© 2023 Give Aid. Focused on both the journey and the destination</div>
           </div>
         </div>
       </footer>
