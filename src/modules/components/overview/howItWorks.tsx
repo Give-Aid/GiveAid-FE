@@ -29,7 +29,7 @@ const HowItWorks = (props: Props) => {
   return (
     <div className="bg-sky-100 py-10 mt-10 ">
       <div className="container">
-        <div className="flex flex-col md:flex-row items-center gap-2">
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
           <div className="md:w-[50%] w-[90%]" >
             <p className="font-[400] text-[18px] mb-1 underline"><Link href={"/howitworks"}>How It Works</Link></p>
             <p className="font-[500] text-[20px] mb-5">
@@ -41,7 +41,7 @@ const HowItWorks = (props: Props) => {
               guides you through the easy steps of:
             </p>
           </div>
-          <div className="grid grid-cols-2 md:w-[50%] w-[90%] mx-auto gap-3 md:gap-6 mt-7 ">
+          <div className="grid grid-cols-2 md:w-[50%] w-[90%] mx-auto gap-3 md:gap-6 ">
             {icons.map((icon) => (
               <div
                 key={icon.alt}
