@@ -42,7 +42,7 @@ const Navbar = (props: Props) => {
 
   return (
     <>
-      <nav className="bg-sky-600">
+      <nav className="bg-sky-600 pb-5">
         <div className="nav">
           <Link href="/" className="z-50">
             <div className="md:w-[250px] w-[150px] h-[50px] relative">
@@ -57,7 +57,7 @@ const Navbar = (props: Props) => {
           {/*Large Screen*/}
           <div className="hidden gap-3 w-full justify-center items-center md:flex z-50 flex-wrap">
             <div className="flex gap-6">
-              <Link href="/#">About</Link>
+              <Link href="/about">About</Link>
               <Link href="/#">How It Works</Link>
             </div>
             <div className="flex gap-6">
