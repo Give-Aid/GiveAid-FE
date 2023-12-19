@@ -22,7 +22,7 @@ const OrgCard = (props: Props) => {
       <Link href={'/'} className="mb-1 text-[18px] md:text-[20px] font-bold text-sky-950">
         Give Aid Foundation
       </Link>
-      <div className= "flex md:mx-2 mb-2 items-center gap-3 w-full">
+      <div className="w-[93%] flex mb-2 items-center gap-3">
         <FaTag className="text-sky-950 text-[20px]" />
         <div className=" flex gap-1 overflow-x-auto removeScrollBar">
           {causes.map((cause) => (
