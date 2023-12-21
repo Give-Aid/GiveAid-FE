@@ -18,18 +18,18 @@ const Footer = (props: Props) => {
                   alt="Give aid"
                 />
               </Link>
-              <div className="flex gap-3 justify-center h-5 mb-5">
-                <a href={"/"}>
-                  <FaFacebook size={"20px"} />
+              <div className="flex gap-5 justify-center h-5 mb-5">
+                <a href={"https://web.facebook.com/profile.php?id=61553787283589"}>
+                  <FaFacebook size={"22px"} />
+                </a>
+                <a href={"https://www.instagram.com/giveaid_/"}>
+                  <FaInstagram size={"22px"} />
                 </a>
                 <a href={"/"}>
-                  <FaInstagram size={"20px"} />
+                  <FaLinkedin size={"22px"} />
                 </a>
-                <a href={"/"}>
-                  <FaLinkedin size={"20px"} />
-                </a>
-                <a href={"/"}>
-                  <FaXTwitter size={"20px"} />
+                <a href={"https://twitter.com/giveaid_"}>
+                  <FaXTwitter size={"22px"} />
                 </a>
               </div>
               <a
@@ -46,12 +46,12 @@ const Footer = (props: Props) => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">
+                <Link href="/howitworks" className="hover:underline">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">
+                <Link href="/about/#faq" className="hover:underline">
                   FAQ
                 </Link>
               </li>

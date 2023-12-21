@@ -3,6 +3,7 @@ import WhatWeDo1 from "./whatWeDo1";
 import WhatWeDo2 from "./whatWeDo2";
 import HowItWorks from "./howItWorks";
 import Quote from "../quote";
+import Trustees from "./trustees";
 
 type Props = {};
 
@@ -16,7 +17,7 @@ const Overview = (props: Props) => {
     },
     {
       quote:
-        "The beliver's shade on the Day of Ressurection will be their charity",
+        "Sadaqah extinguishes sin as a water extinguishes fire.",
       quoter: "- Prophet Muhammad (SAW) [Tirmidhi]",
       image: "/images/pbuh.png",
     },
@@ -44,6 +45,7 @@ const Overview = (props: Props) => {
       <WhatWeDo1 />
       <HowItWorks />
       <WhatWeDo2 />
+      <Trustees/>
       <Quote quote={quotes[1]} />
       <div className="mt-10 text-left bg-sky-950 py-7 md:py-20 ">
         <div className="flex flex-col md:flex-row items-center container">
