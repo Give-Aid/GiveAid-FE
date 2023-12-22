@@ -1,5 +1,6 @@
 import React from "react";
-import FundraisersCard from "./fundraisersCard"
+import FundraisersCard from "./fundraisersCard";
+import Link from "next/link";
 
 type Props = {};
 
@@ -16,6 +17,14 @@ const FundraiserSection = (props: Props) => {
             <FundraisersCard />
           </div>
         ))}
+      </div>
+      <div className="flex justify-center mt-2">
+        <Link
+          href={"/fundraisers"}
+          className="text-gray-600 border border-gray-400 rounded-full px-3 py-1 "
+        >
+          See more
+        </Link>
       </div>
     </div>
   );

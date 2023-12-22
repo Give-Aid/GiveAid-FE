@@ -8,3 +8,8 @@ export { default as Quote } from "./quote";
 export { default as AboutUs } from "./aboutPage/aboutUs";
 export { default as WhyUs } from "./aboutPage/whyUs";
 export { default as PainPoints } from "./aboutPage/painPoints";
+export { default as Faq } from "./aboutPage/faq";
+export { default as Details } from "./details";
+export { default as Registration } from "./hiwPage/registration";
+export { default as Vetting } from "./hiwPage/vetting";
+export { default as PaymentProcess } from "./hiwPage/paymentProcess";

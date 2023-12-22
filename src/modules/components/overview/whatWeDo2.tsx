@@ -74,7 +74,7 @@ const WhatWeDo2 = (props: Props) => {
           <div key={icon.alt} className="w-[120px] flex flex-col items-center">
             <img
               src={icon.src}
-              className="w-16 md:w-[90px] h-16 md:h-[90px]"
+              className="icon"
               alt={icon.alt}
             />
             <p className="mt-2 font-[500] text-center">{icon.type}</p>

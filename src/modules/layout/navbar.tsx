@@ -58,7 +58,7 @@ const Navbar = (props: Props) => {
           <div className="hidden gap-3 w-full justify-center items-center md:flex z-50 flex-wrap">
             <div className="flex gap-6">
               <Link href="/about">About</Link>
-              <Link href="/#">How It Works</Link>
+              <Link href="/howitworks">How It Works</Link>
             </div>
             <div className="flex gap-6">
               <Link href="/#">Organizations</Link>

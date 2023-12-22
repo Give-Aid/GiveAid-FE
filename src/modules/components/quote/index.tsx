@@ -13,7 +13,7 @@ type Props = {
 
 const Quote = ({quote}: Props) => {
   return (
-    <div className="md:w-[600px] w-[90%] mx-auto flex items-center gap-7 border-[3px] border-black rounded-lg shadow-md shadow-sky-950 p-3 sm:p-5 mt-20">
+    <div className="md:w-[600px] w-[90%] mx-auto flex items-center gap-7 border-[3px] border-black rounded-lg shadow-md shadow-sky-950 p-3 sm:p-5 mt-16">
       <blockquote className="text-[14px] sm:text-xl italic font-semibold text-sky-950 w-[70%]">
         <QuoteMark />
         <p className="mb-4 sm:tracking-wide">
@@ -29,4 +29,3 @@ const Quote = ({quote}: Props) => {
 };
 
 export default Quote;
-{/* <a href="https://www.flaticon.com/free-icons/everything" title="everything icons">Everything icons created by bearicons - Flaticon</a> */}
