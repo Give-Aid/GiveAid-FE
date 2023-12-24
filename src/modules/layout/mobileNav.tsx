@@ -12,6 +12,8 @@ const MobileNav = (props: Props) => {
     { title: "How It Works", link: "/howitworks" },
     { title: "Organizations", link: "/organizations" },
     { title: "Fundraisers", link: "/fundraisers" },
+    { title: "Sadaqah Jariyah", link: "/sadaqah-jariyah" },
+    { title: "Urgent Needs!", link: "/urgent-needs" },
   ];
 
   const router = useRouter();

@@ -2,19 +2,60 @@ import { Duration } from "@/modules/icons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Tooltip from "../tooltip";
 import { FaTag } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { usePaymentContext } from "@/context/paymentProvider";
+import { Beneficiary } from "@/utils/types";
 
-type Props = {};
+type Props = {
+  type: "normal" | "sadaqah" | "urgent";
+  beneficiary: Beneficiary;
+};
 
-const FundraisersCard = (props: Props) => {
+const FundraisersCard = ({ type, beneficiary }: Props) => {
+  const router = useRouter();
+  const isHome = router.pathname === "/";
+
+  const { removeFundraiser, addFundraiser, selectedFundraisers } =
+    usePaymentContext();
+
+  const getBg = () => {
+    if (type === "sadaqah") {
+      return "border-yellow-300";
+    } else if (type === "urgent") {
+      return "border-red-300";
+    } else {
+      return "hover:border-sky-500";
+    }
+  };
+  const bg = getBg();
   const causes = ["orphans", "Feeding", "Clothe", "Sadaqah jaryah"];
   const textMaxLength = 100;
   const text =
     "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.";
 
+  const handleCheckboxChange = (isChecked: boolean) => {
+    if (isChecked) {
+      // const fundraiserDetail = {
+      //   id: 1,
+      //   name: "hello",
+      // };
+      addFundraiser(beneficiary);
+    } else {
+      removeFundraiser(beneficiary.id);
+    }
+  };
+
+  // console.log(selectedFundraisers)
+
   return (
-    <div className="card h-[480px] md:h-[530px]">
+    <div className={`card ${bg} h-[480px] md:h-[530px]`}>
+      <input
+        type="checkbox"
+        className={`w-6 h-6 absolute top-2 right-2 z-10 ${isHome && "hidden"}`}
+        onChange={(e) => handleCheckboxChange(e.target.checked)}
+        checked={selectedFundraisers.some(f=>f.id === beneficiary?.id)}
+      />
       <Link href={"/#"}>
         <div className="fundraiser-card-Image">
           <Image
@@ -26,7 +67,7 @@ const FundraisersCard = (props: Props) => {
         </div>
       </Link>
 
-      <div className="flex gap-3 items-center h-10 px-2 md:px-3">
+      <div className="flex gap-2 items-center h-10 px-2 md:px-3">
         <div className="relative h-6 w-6  border border-sky-200 rounded-full">
           <Image
             layout="fill"
@@ -35,8 +76,8 @@ const FundraisersCard = (props: Props) => {
             alt="fundraiser logo"
           />
         </div>
-        <div className="font-[400] text-[14px] font-inter">
-          Give Aid Foundation
+        <div className="font-[400] text-[14px] font-inter w-[200px] whitespace-nowrap overflow-auto removeScrollBar">
+         {beneficiary?.name}
         </div>
       </div>
 
@@ -54,7 +95,7 @@ const FundraisersCard = (props: Props) => {
       <div className="px-2 md:px-3 h-[110px] md:h-[130px]">
         <Link href={"/#"}>
           <p className="mb-1 text-[16px] md:text-[18px] font-bold tracking-tight text-sky-950">
-            Noteworthy technology acquisitions 2021
+            {beneficiary?.name}
           </p>
         </Link>
         <p className="my-1 text-[12px] md:text-[14px] font-normal text-gray-700">
@@ -79,9 +120,9 @@ const FundraisersCard = (props: Props) => {
               funded of N1,000,000
             </p>
           </div>
-          <div>
-            <button className="blue-btn">Support</button>
-          </div>
+          <Link href={"/"}>
+            <button className="blue-btn">Donate</button>
+          </Link>
         </div>
       </div>
     </div>

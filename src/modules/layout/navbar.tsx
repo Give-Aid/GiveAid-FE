@@ -55,14 +55,18 @@ const Navbar = (props: Props) => {
           </Link>
 
           {/*Large Screen*/}
-          <div className="hidden gap-3 w-full justify-center items-center md:flex z-50 flex-wrap">
+          <div className="hidden gap-6 w-full justify-center items-center md:flex z-50 flex-wrap">
             <div className="flex gap-6">
               <Link href="/about">About</Link>
               <Link href="/howitworks">How It Works</Link>
             </div>
             <div className="flex gap-6">
-              <Link href="/#">Organizations</Link>
-              <Link href="/#">Fundraisers</Link>
+              <Link href="/organizations">Organizations</Link>
+              <Link href="/fundraisers">Fundraisers</Link>
+            </div>
+            <div className="flex gap-6 font-medium">
+              <Link href="/sadaqah-jariyah" className="text-yellow-300 ">Sadaqah Jariyah</Link>
+              <Link href="/urgent-needs" className="text-red-300">Urgent Needs!</Link>
             </div>
           </div>
 

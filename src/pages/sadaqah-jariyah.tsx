@@ -1,17 +1,10 @@
+import { SearchBar, Filter, FundraisersCard, Info, Quote, PaymentBar } from "@/modules/components";
 import { usePaymentContext } from "@/context/paymentProvider";
-import {
-  SearchBar,
-  Filter,
-  OrgCard,
-  PaymentBar,
-  Info,
-} from "@/modules/components";
-
 import React from "react";
 
 type Props = {};
 
-const Organizations = (props: Props) => {
+const SadaqahJariyah = (props: Props) => {
   const beneficiaries = [
     {
       id: 1,
@@ -51,42 +44,49 @@ const Organizations = (props: Props) => {
     },
   ];
 
-  const { selectedOrganizations, removeOrganization, removeAllOrganizations } =
-    usePaymentContext();
+  const { selectedFundraisers, removeFundraiser, removeAllFundraisers } =
+  usePaymentContext();
 
+  const quote = {
+    quote:
+      "When a man dies, all his good deeds come to an end except three: Ongoing charity, beneficial Knowledge, or a righteous son who will pray for him.",
+    quoter: "- Prophet Muhammad (SAW) [Muslim]",
+    image: "/images/pbuh.png",
+  };
   return (
     <div className="container py-[2rem]">
       <div className="flex justify-center">
         <SearchBar />
       </div>
       <div className="flex flex-col md:flex-row gap-3 mt-5">
-        <Filter type={"organization"} />
+        <Filter type={"fundraiser"}/>
         <div className="md:w-full">
-          <h2 className="text-[26px] md:text-[30px] font-[700]">
-            All Organizations
+          <h2 className="text-[26px] md:text-[30px] font-[700] text-gradient from-yellow-400 to-yellow-600">
+            Invest in Ongoing Charity Efforts
           </h2>
           <Info />
           <div className="mt-5 ml-8 sm:ml-0 flex flex-wrap justify-start gap-4">
-            {beneficiaries.map((b) => (
+          {beneficiaries.map((b) => (
               <div key={b.id}>
-                <OrgCard beneficiary={b} />
+                <FundraisersCard type="sadaqah" beneficiary={b}/>
               </div>
             ))}
           </div>
         </div>
       </div>
-      {selectedOrganizations.length && (
+      {selectedFundraisers.length && (
         <PaymentBar
-          type={"Organizations"}
-          beneficiaries={selectedOrganizations}
-          removeBeneficiary={removeOrganization}
-          removeAllBeneficiaries={removeAllOrganizations}
+          type={"Fundraisers"}
+          beneficiaries={selectedFundraisers}
+          removeBeneficiary={removeFundraiser}
+          removeAllBeneficiaries={removeAllFundraisers}
         />
       )}
+      <Quote quote={quote}/>
     </div>
   );
 };
 
-export default Organizations;
-Organizations.title = "Give Aid: Donate to Organizations with us";
-Organizations.isAuthPage = false;
+export default SadaqahJariyah;
+SadaqahJariyah.title = "Give Aid: Explort Sadaqah Jariyah Opportunities";
+SadaqahJariyah.isAuthPage = false;
