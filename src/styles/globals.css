@@ -13,13 +13,16 @@
   .text-gradient {
     @apply bg-gradient-to-t bg-clip-text text-transparent
   }
+
   .heading-gradient {
     @apply text-center text-[26px] font-[700] text-gradient from-sky-300 to-sky-600
   }
-   /* icons */
-   .icon {
+
+  /* icons */
+  .icon {
     @apply w-16 md:w-[90px] h-16 md:h-[90px]
-   }
+  }
+
   /* buttons */
   .blue-btn {
     @apply bg-gradient-to-b from-sky-400 to-sky-700 text-white py-2 md:py-[12px] px-4 md:px-6 rounded-md md:text-lg shadow-md;
@@ -72,7 +75,7 @@
   }
 
   .navdropdown {
-    @apply items-center absolute justify-between w-full md:hidden top-20
+    @apply items-center absolute justify-between w-full md:hidden top-24 z-50
   }
 
   .navdropdown-ul {
@@ -89,7 +92,7 @@
   }
 
   .footer-links {
-    @apply flex flex-wrap justify-center items-center text-sm gap-3 text-white font-inter font-[300] my-10
+    @apply flex flex-wrap justify-center items-center text-sm gap-3 text-white font-inter font-[300] my-3
   }
 
   .footer-bottom {
@@ -98,11 +101,11 @@
 
   /* fundraiser card */
   .card {
-    @apply w-[290px] md:w-[340px] bg-white border p-1 border-gray-200 hover:border-sky-500 rounded-lg shadow-lg hover:translate-y-[-3px] hover:transition duration-500 ease-in-out flex flex-col
+    @apply w-[270px] md:w-[320px] bg-white border p-2 border-gray-200 rounded-lg shadow-lg hover:translate-y-[-3px] hover:transition duration-500 ease-in-out flex flex-col relative
   }
 
   .fundraiser-card-Image {
-    @apply rounded-t-lg w-[280px] md:w-[330px] h-[200px] object-cover relative border border-sky-100
+    @apply rounded-t-lg w-[255px] md:w-[305px] h-[200px] object-cover relative border border-sky-100
   }
 
   .tags {
@@ -112,6 +115,7 @@
   .tag {
     @apply flex-shrink-0 px-2 py-[2px] text-[10px] border border-sky-950 w-fit rounded-full
   }
+
   .fundraiser-card-duration {
     @apply text-[10px] md:text-[12px] gap-1 text-gray-400 flex items-center
   }
@@ -122,6 +126,26 @@
 
   .fundraiser-card-progress-b {
     @apply w-[90%] h-[6px] bg-gradient-to-l from-sky-300 to-sky-700 rounded-full
+  }
+
+  /* drawer */
+  .filter-drawer {
+    @apply fixed md:relative top-0 left-0 z-50 md:z-10 h-screen md:h-fit p-4 md:p-0 overflow-y-auto transition-transform duration-500 bg-white w-full md:border-none
+  }
+
+  /* payment-bar */
+  .payment-bar {
+    @apply fixed bottom-0 left-0 w-full bg-white border-t border-sky-500 h-[150px] overflow-y-auto removeScrollBar rounded-t-2xl z-20
+  }
+
+  .close-bar {
+    @apply absolute top-2 md:top-5 md:right-6 right-4 text-[20px] md:text-[22px] hover:cursor-pointer
+  }
+  .payment-input {
+    @apply block p-2 text-[14px] w-full text-gray-900 border border-gray-300 font-medium rounded-lg ps-6 md:py-3 bg-gray-50
+  }
+  .naira-input {
+    @apply absolute inset-y-0 start-0 flex items-center pointer-events-none text-[20px] ps-1
   }
 
 }

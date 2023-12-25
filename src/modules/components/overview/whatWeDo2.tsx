@@ -32,7 +32,7 @@ const WhatWeDo2 = (props: Props) => {
     {
       src: "/images/hospital-bed.png",
       alt: "health",
-      type: "Health",
+      type: "Health Care",
     },
     {
       src: "/images/mosque.png",

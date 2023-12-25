@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 
-
 export type NextPageWithLayout = NextPage & {
   isAuthPage?: boolean;
   title?: string;
@@ -10,3 +9,20 @@ export type NextPageWithLayout = NextPage & {
 export type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
+
+interface Beneficiary {
+  id: number;
+  name: string;
+}
+interface PaymentContextProps {
+  selectedFundraisers: Beneficiary[];
+  addFundraiser: (fundraiser: Beneficiary) => void;
+  removeFundraiser: (id: number) => void;
+  removeAllFundraisers: () => void;
+  selectedOrganizations: Beneficiary[];
+  addOrganization: (fundraiser: Beneficiary) => void;
+  removeOrganization: (id: number) => void;
+  removeAllOrganizations: () => void;
+}
+
+export type { Beneficiary, PaymentContextProps };

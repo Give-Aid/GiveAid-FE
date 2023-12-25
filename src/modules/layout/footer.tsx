@@ -19,7 +19,11 @@ const Footer = (props: Props) => {
                 />
               </Link>
               <div className="flex gap-5 justify-center h-5 mb-5">
-                <a href={"https://web.facebook.com/profile.php?id=61553787283589"}>
+                <a
+                  href={
+                    "https://web.facebook.com/profile.php?id=61553787283589"
+                  }
+                >
                   <FaFacebook size={"22px"} />
                 </a>
                 <a href={"https://www.instagram.com/giveaid_/"}>
@@ -39,33 +43,47 @@ const Footer = (props: Props) => {
                 giveaidpa@gmail.com
               </a>
             </div>
-            <ul className="footer-links">
-              <li>
-                <Link href="/about" className="hover:underline">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/howitworks" className="hover:underline">
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link href="/about/#faq" className="hover:underline">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:underline">
-                  Organizations
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:underline">
-                  Fundraisers
-                </Link>
-              </li>
-            </ul>
+            <div className="my-10">
+              <ul className="footer-links">
+                <li>
+                  <Link href="/about" className="hover:underline">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/howitworks" className="hover:underline">
+                    How It Works
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about/#faq" className="hover:underline">
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/organizations" className="hover:underline">
+                    Organizations
+                  </Link>
+                </li>
+              </ul>
+              <ul className="footer-links">
+                <li>
+                  <Link href="/fundraisers" className="hover:underline">
+                    Fundraisers
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sadaqah-jariyah" className="hover:underline">
+                    Sadaqah Jariyah
+                  </Link>
+                </li>
+                <li>
+                  <Link href="urgent-needs" className="hover:underline">
+                    Urgent Needs
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="footer-bottom">
             <div className="flex gap-3 justify-center">
@@ -77,7 +95,9 @@ const Footer = (props: Props) => {
                 Privacy Policy
               </Link>
             </div>
-            <div>© 2023 Give Aid. Focused on both the journey and the destination</div>
+            <div>
+              © 2023 Give Aid. Focused on both the journey and the destination
+            </div>
           </div>
         </div>
       </footer>
