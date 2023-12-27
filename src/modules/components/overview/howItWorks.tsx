@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -30,11 +31,13 @@ const HowItWorks = (props: Props) => {
     <div className="bg-sky-100 py-10 mt-10 ">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
-          <div className="md:w-[50%] w-[90%]" >
-            <p className="font-[400] text-[18px] mb-1 underline"><Link href={"/howitworks"}>How It Works</Link></p>
+          <div className="md:w-[50%] w-[90%]">
+            <p className="font-[400] text-[18px] mb-1 underline">
+              <Link href={"/howitworks"}>How It Works</Link>
+            </p>
             <p className="font-[500] text-[20px] mb-5">
-              Unveil the effortless pathway to making a difference with Give Aid.
-              Our{" "}
+              Unveil the effortless pathway to making a difference with Give
+              Aid. Our{" "}
               <span className="text-sky-800">
                 <Link href={"/howitworks"}>How it works page</Link>{" "}
               </span>{" "}
@@ -47,17 +50,22 @@ const HowItWorks = (props: Props) => {
                 key={icon.alt}
                 className="flex flex-col items-center bg-sky-950 text-white p-4 shadow rounded"
               >
-                <img
-                  src={icon.src}
-                  className="w-[70px] md:w-[110px] h-[70px] md:h-[110px]"
-                  alt={icon.alt}
-                />
+                <div className="w-[70px] md:w-[110px] h-[70px] md:h-[110px] relative">
+                  <Image
+                    src={icon.src}
+                    layout="fill"
+                    objectFit="contain"
+                    alt={icon.alt}
+                  />
+                </div>
                 <p className="mt-2 font-[500] text-center">{icon.type}</p>
               </div>
             ))}
           </div>
         </div>
-        <p className="font-[500] text-[20px] mt-5 text-center italic">We ensure that every action you take directly impacts lives!</p>
+        <p className="font-[500] text-[20px] mt-5 text-center italic">
+          We ensure that every action you take directly impacts lives!
+        </p>
       </div>
     </div>
   );

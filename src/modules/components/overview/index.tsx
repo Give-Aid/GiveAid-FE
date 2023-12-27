@@ -4,6 +4,7 @@ import WhatWeDo2 from "./whatWeDo2";
 import HowItWorks from "./howItWorks";
 import Quote from "../quote";
 import Trustees from "./trustees";
+import Image from "next/image";
 
 type Props = {};
 
@@ -63,11 +64,15 @@ const Overview = (props: Props) => {
             <button className="white-btn font-[500]">Donate Now</button>
           </div>
           <div className="mt-5 md:mt-0">
-            <img
-              src="/images/giving-love.png"
-              alt="help"
-              className="w-[100px] md:w-full"
-            />
+            <div className="w-[100px] md:w-[240px] h-[100px] md:h-[240px] relative">
+              <Image
+                src="/images/giving-love.png"
+                alt="help"
+                
+                layout="fill"
+              objectFit="contain"
+              />
+            </div>
           </div>
         </div>
       </div>

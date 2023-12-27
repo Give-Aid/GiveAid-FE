@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -12,11 +13,14 @@ const Footer = (props: Props) => {
           <div className="sm:flex sm:items-center sm:justify-between">
             <div>
               <Link href="/" className="flex justify-center mb-5">
-                <img
-                  src="/images/logowhite.png"
-                  className="w-[250px]"
-                  alt="Give aid"
-                />
+                <div className="w-[250px] h-[70px] relative">
+                  <Image
+                    src="/images/logowhite.png"
+                    layout="fill"
+                    objectFit="contain"
+                    alt="Give aid"
+                  />
+                </div>
               </Link>
               <div className="flex gap-5 justify-center h-5 mb-5">
                 <a
@@ -87,11 +91,11 @@ const Footer = (props: Props) => {
           </div>
           <div className="footer-bottom">
             <div className="flex gap-3 justify-center">
-              <Link href={"/"} className="hover:underline">
+              <Link href={"/terms"} className="hover:underline">
                 Terms of Use
               </Link>
               |
-              <Link href={"/"} className="hover:underline">
+              <Link href={"/privacy-policy"} className="hover:underline">
                 Privacy Policy
               </Link>
             </div>

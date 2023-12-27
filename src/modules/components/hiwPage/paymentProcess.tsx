@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -11,11 +12,14 @@ const PaymentProcess = (props: Props) => {
             How Our
             <span className="font-[300]"> Payment Process Works</span>
           </p>
-          <img
-            src="/images/flutterwave.png"
-            alt="flutterwave"
-            className="w-[100px] h-[100px] top-0 right-5 rotate-12"
-          />
+          <div className="w-[100px] h-[100px] top-0 right-5 rotate-12 relative">
+            <Image
+              src="/images/flutterwave.png"
+              alt="flutterwave"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
         </div>
         <p className="mt-5">
           At Give Aid, we aim to provide a seamless donation experience. When
@@ -50,11 +54,14 @@ const PaymentProcess = (props: Props) => {
             receive 0% of the payment, guaranteeing that all donations go
             directly to the intended beneficiaries.
           </p>
-          <img
-            src="/images/subaccount.png"
-            alt="creating subaccount"
-            className="mt-2 rounded border border-black shadow w-[full] md:w-[550px]"
-          />
+          <div className="mt-2 rounded shadow w-[430px] md:w-[550px] h-[330px] relative">
+            <Image
+              src="/images/subaccount.png"
+              alt="creating subaccount"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
         </div>
         <div>
           <p className="font-[600] text-[20px] mt-10">
@@ -70,7 +77,8 @@ const PaymentProcess = (props: Props) => {
             Our payment function code allows customization for transaction
             charges. Despite default split payment percentages, the code enables
             the override of default &quot;
-            <span className="font-mono font-[700]">split type</span>&quot; and &quot;
+            <span className="font-mono font-[700]">split type</span>&quot; and
+            &quot;
             <span className="font-mono font-[700]">
               split payment percentage
             </span>
@@ -78,16 +86,21 @@ const PaymentProcess = (props: Props) => {
             <span className="font-mono font-[700]">
               transaction_charge_type
             </span>
-            &quot; as &quot;<span className="font-[700]">percentage</span>&quot; and &quot;
-            <span className="font-mono font-[500]">transaction_charge</span>&quot; as
-            &quot;<span className="font-[500]">0</span>&quot;. This ensures nullification
-            of transaction charges regardless of default percentages.
+            &quot; as &quot;<span className="font-[700]">percentage</span>&quot;
+            and &quot;
+            <span className="font-mono font-[500]">transaction_charge</span>
+            &quot; as &quot;<span className="font-[500]">0</span>&quot;. This
+            ensures nullification of transaction charges regardless of default
+            percentages.
           </p>
-          <img
-            src="/images/code.png"
-            alt="creating subaccount"
-            className="mt-2 rounded border border-black shadow w-[full] md:w-[550px] object-contain"
-          />
+          <div className="mt-2 rounded shadow w-[430px] md:w-[550px] h-[330px] relative">
+            <Image
+              src="/images/code.png"
+              alt="creating subaccount"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
           <p className="mt-2">
             View our{" "}
             <a href="#" className="text-sky-700 underline">
@@ -113,14 +126,18 @@ const PaymentProcess = (props: Props) => {
             <span className="font-mono font-[700]">
               transaction_split_ratio
             </span>
-            &quot; field to &quot;<span className="font-[600]">1</span>&quot; for all
-            subaccounts, defining an equal distribution of funds among them.
+            &quot; field to &quot;<span className="font-[600]">1</span>&quot;
+            for all subaccounts, defining an equal distribution of funds among
+            them.
           </p>
-          <img
-            src="/images/split.png"
-            alt="creating subaccount"
-            className="mt-2 rounded border border-black shadow w-[full] md:w-[550px] object-cover"
-          />
+          <div className="mt-2 rounded shadow w-[430px] md:w-[550px] h-[370px] relative">
+            <Image
+              src="/images/split.png"
+              alt="creating subaccount"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
           <p className="mt-2">
             View our{" "}
             <a href="#" className="text-sky-700 underline">

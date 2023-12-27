@@ -46,11 +46,14 @@ const Navbar = (props: Props) => {
         <div className="nav">
           <Link href="/" className="z-50">
             <div className="md:w-[250px] w-[150px] h-[50px] relative">
-              <img
-                className="md:w-[250px] w-[150px] h-[50px] object-contain"
-                src="/images/logowhite.png"
-                alt="Give Aid Logo"
-              />
+              <div className="md:w-[250px] w-[150px] h-[50px] relative">
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="/images/logowhite.png"
+                  alt="Give Aid Logo"
+                />
+              </div>
             </div>
           </Link>
 

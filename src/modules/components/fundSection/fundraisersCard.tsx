@@ -54,18 +54,17 @@ const FundraisersCard = ({ type, beneficiary }: Props) => {
         type="checkbox"
         className={`w-6 h-6 absolute top-2 right-2 z-10 ${isHome && "hidden"}`}
         onChange={(e) => handleCheckboxChange(e.target.checked)}
-        checked={selectedFundraisers.some(f=>f.id === beneficiary?.id)}
+        checked={selectedFundraisers.some((f) => f.id === beneficiary?.id)}
       />
-      <Link href={"/#"}>
-        <div className="fundraiser-card-Image">
-          <Image
-            layout="fill"
-            objectFit="cover"
-            src="/images/giveaid.png"
-            alt="fundraiser"
-          />
-        </div>
-      </Link>
+
+      <div className="fundraiser-card-Image">
+        <Image
+          layout="fill"
+          objectFit="cover"
+          src="/images/giveaid.png"
+          alt="fundraiser"
+        />
+      </div>
 
       <div className="flex gap-2 items-center h-10 px-2 md:px-3">
         <div className="relative h-6 w-6  border border-sky-200 rounded-full">
@@ -77,7 +76,7 @@ const FundraisersCard = ({ type, beneficiary }: Props) => {
           />
         </div>
         <div className="font-[400] text-[14px] font-inter w-[200px] whitespace-nowrap overflow-auto removeScrollBar">
-         {beneficiary?.name}
+          {beneficiary?.name}
         </div>
       </div>
 

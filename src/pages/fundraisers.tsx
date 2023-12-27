@@ -68,7 +68,7 @@ const Fundraisers = (props: Props) => {
           </div>
         </div>
       </div>
-      {selectedFundraisers.length && (
+      {selectedFundraisers.length > 0 && (
         <PaymentBar
           type={"Fundraisers"}
           beneficiaries={selectedFundraisers}

@@ -11,7 +11,7 @@ import React from "react";
 
 type Props = {};
 
-const SadaqahJariyah = (props: Props) => {
+const UrgentNeeds = (props: Props) => {
   const beneficiaries = [
     {
       id: 1,
@@ -79,7 +79,7 @@ const SadaqahJariyah = (props: Props) => {
           </div>
         </div>
       </div>
-      {selectedFundraisers.length && (
+      {selectedFundraisers.length > 0 && (
         <PaymentBar
           type={"Fundraisers"}
           beneficiaries={selectedFundraisers}
@@ -92,6 +92,6 @@ const SadaqahJariyah = (props: Props) => {
   );
 };
 
-export default SadaqahJariyah;
-SadaqahJariyah.title = "Give Aid: Support Critical Urgencies Today";
-SadaqahJariyah.isAuthPage = false;
+export default UrgentNeeds;
+UrgentNeeds.title = "Give Aid: Support Critical Urgencies Today";
+UrgentNeeds.isAuthPage = false;

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -7,7 +8,9 @@ const AboutUs = (props: Props) => {
     <div className="flex flex-col md:flex-row container gap-14">
       <div className="w-[100%] md:w-[60%]">
         <h2 className="font-[500] text-sky-950 text-[20px]">About us</h2>
-        <h2 className="font-[500] text-gradient from-sky-300 to-sky-700 text-[20px]">Assalamu Alaikum</h2>
+        <h2 className="font-[500] text-gradient from-sky-300 to-sky-700 text-[20px]">
+          Assalamu Alaikum
+        </h2>
         <p className="text-[30px] md:text-[36px] font-[700] my-4 text-sky-950">
           Help is Our <span className="font-[300]">Main Goal</span>
         </p>
@@ -18,11 +21,14 @@ const AboutUs = (props: Props) => {
           allowing users to make charitable contributions with purpose and ease.
         </p>
 
-        <img
-          className="w-[300px] md:w-[400px] mx-auto mt-10"
-          src="/images/circle.png"
-          alt="donate"
-        />
+        <div className="w-[300px] md:w-[400px] h-[280px] md:h-[350px] mx-auto mt-10 relative">
+          <Image
+            layout="fill"
+            objectFit="contain"
+            src="/images/circle.png"
+            alt="donate"
+          />
+        </div>
       </div>
       <div className="w-[100%] md:w-[40%]">
         <h2 className="text-[30px] md:text-[36px] font-[700] mb-4 md:mb-10 text-sky-950">

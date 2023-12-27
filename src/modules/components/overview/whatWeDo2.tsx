@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -72,11 +73,14 @@ const WhatWeDo2 = (props: Props) => {
       <div className="flex flex-wrap md:w-[800px] w-[90%] mx-auto gap-3 space-y-2 md:gap-12 mt-7 justify-center">
         {icons.map((icon) => (
           <div key={icon.alt} className="w-[120px] flex flex-col items-center">
-            <img
-              src={icon.src}
-              className="icon"
-              alt={icon.alt}
-            />
+            <div className="icon relative">
+              <Image
+                src={icon.src}
+                layout="fill"
+                objectFit="contain"
+                alt={icon.alt}
+              />
+            </div>
             <p className="mt-2 font-[500] text-center">{icon.type}</p>
           </div>
         ))}

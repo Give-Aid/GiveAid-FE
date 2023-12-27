@@ -26,7 +26,7 @@ const About = (props: Props) => {
         </p>
         <div className="h-[500px] md:h-[100vh] w-[100%] mt-20 relative  max-w-screen-2xl">
           <img
-            src="images/almajiri.jpg"
+            src="/images/almajiri.jpg"
             className="object-cover object-center w-full h-full absolute inset-0"
             alt="almajiri"
           />

@@ -1,5 +1,6 @@
 import React from "react";
 import { Details } from "@/modules/components";
+import Image from "next/image";
 
 type Props = {};
 
@@ -14,18 +15,36 @@ const Vetting = (props: Props) => {
           these form the basis of our evaluation process.
         </div>
       ),
-      icon: <img src="images/checklist.png" alt="vetting" className="icon" />,
+      icon: (
+        <div className="icon relative">
+          <Image
+            src="/images/checklist.png"
+            alt="vetting"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+      ),
     },
     {
       title: "Documentation Review:",
       details: (
         <div>
           Review of all documentation provided, such as financial statements,
-          legal registrations, and certificates to confirm the organization&apos;s
-          legal status as a charitable entity.
+          legal registrations, and certificates to confirm the
+          organization&apos;s legal status as a charitable entity.
         </div>
       ),
-      icon: <img src="images/document.png" alt="vetting" className="icon" />,
+      icon: (
+        <div className="icon relative">
+          <Image
+            src="/images/document.png"
+            alt="review"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+      ),
     },
     {
       title: "Background Checks",
@@ -36,7 +55,16 @@ const Vetting = (props: Props) => {
           of identity and professional history.
         </div>
       ),
-      icon: <img src="images/register.png" alt="vetting" className="icon" />,
+      icon: (
+        <div className="icon relative">
+          <Image
+            src="/images/register.png"
+            alt="register"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+      ),
     },
     {
       title: "On-site Assessment",
@@ -49,7 +77,14 @@ const Vetting = (props: Props) => {
         </div>
       ),
       icon: (
-        <img src="images/organization1.png" alt="vetting" className="icon" />
+        <div className="icon relative">
+          <Image
+            src="/images/organization1.png"
+            alt="assessment"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
       ),
     },
     {
@@ -60,12 +95,19 @@ const Vetting = (props: Props) => {
           channels, to further validate the entity&apos;s history of activities,
           community engagement, and consistency with the provided information.
           We check online platforms for reviews or feedback from individuals or
-          communities who have interacted with or benefited from the entity&apos;s
-          services.
+          communities who have interacted with or benefited from the
+          entity&apos;s services.
         </div>
       ),
       icon: (
-        <img src="images/social-media.png" alt="vetting" className="icon" />
+        <div className="icon relative">
+          <Image
+            src="/images/social-media.png"
+            alt="verification"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
       ),
     },
     {
@@ -76,7 +118,16 @@ const Vetting = (props: Props) => {
           maintain their commitment to transparency and effectiveness.
         </div>
       ),
-      icon: <img src="images/cctv-camera.png" alt="vetting" className="icon" />,
+      icon: (
+        <div className="icon relative">
+          <Image
+            src="/images/cctv-camera.png"
+            alt="monitoring"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+      ),
     },
   ];
 
