@@ -75,7 +75,7 @@ const Organizations = (props: Props) => {
           </div>
         </div>
       </div>
-      {selectedOrganizations.length && (
+      {selectedOrganizations.length > 0 && (
         <PaymentBar
           type={"Organizations"}
           beneficiaries={selectedOrganizations}

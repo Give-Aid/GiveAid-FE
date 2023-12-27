@@ -87,11 +87,11 @@ const Footer = (props: Props) => {
           </div>
           <div className="footer-bottom">
             <div className="flex gap-3 justify-center">
-              <Link href={"/"} className="hover:underline">
+              <Link href={"/terms"} className="hover:underline">
                 Terms of Use
               </Link>
               |
-              <Link href={"/"} className="hover:underline">
+              <Link href={"/privacy-policy"} className="hover:underline">
                 Privacy Policy
               </Link>
             </div>

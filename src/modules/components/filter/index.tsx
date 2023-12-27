@@ -113,7 +113,7 @@ const Filter = ({ type }: Props) => {
             drawer ? "translate-x" : "-translate-x-full md:translate-x-0"
           }`}
         >
-          <IoMdClose className="absolute top-8 right-8 text-[30px] md:hidden" onClick={()=>setDrawer(false)}/>
+          <IoMdClose className="absolute top-8 right-8 text-[30px] md:hidden hover:cursor-pointer" onClick={()=>setDrawer(false)}/>
           <Collapsible className="my-16">
             <CollapsibleTrigger className="text-[18px] font-[500] flex gap-2 items-center mb-2">
               By Cause <LuChevronsUpDown />
