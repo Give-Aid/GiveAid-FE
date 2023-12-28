@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import {
   TbHexagonNumber1,
@@ -16,11 +17,14 @@ const PainPoints = (props: Props) => {
         </p>
         <div className="flex flex-col md:flex-row gap-7 items-center">
           <div className="md:w-[30%]">
-            <img
-              src="images/thinking.png"
-              alt="thinking"
-              className="w-[300px] md:w-[400px] mt-10 mx-auto"
-            />
+            <div className="w-[300px] md:w-[400px] mt-10 h-[280px] md:h-[350px] mx-auto relative">
+              <Image
+                layout="fill"
+                objectFit="contain"
+                src="/images/thinking.png"
+                alt="thinking"
+              />
+            </div>
           </div>
           <div className="md:w-[70%]">
             <div className="mb-16">
@@ -49,17 +53,22 @@ const PainPoints = (props: Props) => {
             <div className="mb-10">
               <p className="text-[22px] font-bold mb-4">With Organizations</p>
               <p className="text-[18px] font-bold mb-3">
-              Donor fatigue:{" "}
+                Donor fatigue:{" "}
                 <span className="font-[300]">
                   {" "}
-                  Same audience of donors may become tired of being asked to donate to charity, especially if they are bombarded with requests.
+                  Same audience of donors may become tired of being asked to
+                  donate to charity, especially if they are bombarded with
+                  requests.
                 </span>
               </p>
               <p className="text-[18px] font-bold mb-1">
-              Limited reach:{" "}
+                Limited reach:{" "}
                 <span className="font-[300]">
                   {" "}
-                  When Organizations have a restricted audience or struggle to connect with a diverse range of individuals, it can hinder their ability to generate the necessary financial support for their projects and initiatives.
+                  When Organizations have a restricted audience or struggle to
+                  connect with a diverse range of individuals, it can hinder
+                  their ability to generate the necessary financial support for
+                  their projects and initiatives.
                 </span>
               </p>
             </div>

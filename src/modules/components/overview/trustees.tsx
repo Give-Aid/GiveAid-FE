@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -19,10 +20,14 @@ const Trustees = (props: Props) => {
             key={trustee}
             className="w-[110px] md:w-[150px] flex flex-col items-center gap-2"
           >
-            <img
-              src="./images/mufti.jpg"
-              className="w-full h-full rounded-full shadow "
-            />
+            <div className="w-[110px] md:w-[150px] h-[110px] md:h-[150px] rounded-full shadow relative">
+              <Image
+                src="/images/mufti.jpg"
+                alt="trustee"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
             <p className="font-[500] text-center">Mufti Ismail Menk</p>
           </div>
         ))}

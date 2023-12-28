@@ -40,7 +40,7 @@ const TermsOfUse = (props: Props) => {
             <span className="font-medium">
               Data Privacy and Protection:
             </span>{" "}
-            Users' data will be collected, stored, and processed in compliance
+            Users&apos; data will be collected, stored, and processed in compliance
             with our Privacy Policy. Users are responsible for the accuracy and
             legality of the information they provide and must not engage in any
             unauthorized data access or breaches.
@@ -150,8 +150,8 @@ const TermsOfUse = (props: Props) => {
             </span>{" "}
             Give Aid utilizes Flutterwave as a third-party payment system for
             card donations within the app. Any issues arising from the use of
-            Flutterwave's services are not the responsibility of Give Aid. Users
-            agree that any disputes, problems, or concerns with Flutterwave's
+            Flutterwave&apos;s services are not the responsibility of Give Aid. Users
+            agree that any disputes, problems, or concerns with Flutterwave&apos;s
             services will be addressed directly with Flutterwave.
           </li>
           <li className="mb-2">
