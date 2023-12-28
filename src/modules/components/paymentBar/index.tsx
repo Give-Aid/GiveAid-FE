@@ -25,7 +25,7 @@ const PaymentBar = ({
       <button onClick={() => removeAllBeneficiaries()}>
         <IoMdClose className="close-bar" />
       </button>
-      <div className="container px-2 py-9 md:py-5">
+      <div className="container px-2 py-7 md:py-5">
         <div className="mb-3 flex items-center justify-between md:justify-center md:gap-6">
           <p className="font-medium">
             Selected {type}:{" "}
