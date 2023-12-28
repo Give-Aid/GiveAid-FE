@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import { Beneficiary, PaymentContextProps } from "@/utils/types";
-import { added, alreadyAdded, removed, removedAll } from "@/utils/toasters";
+import { added, alreadyAdded, removed, removedAll, activatePlan, deactivatePlan } from "@/utils/toasters";
 
 type Props = {
   children: ReactNode;
@@ -22,6 +22,9 @@ const PaymentContext = createContext<PaymentContextProps>({
   addOrganization: () => {},
   removeOrganization: () => {},
   removeAllOrganizations: () => {},
+  paymentPlan: undefined,
+  addPaymentPlan: () => {},
+  removePaymentPlan: () => {},
 });
 
 export const usePaymentContext = () => useContext(PaymentContext);
@@ -31,8 +34,22 @@ const PaymentProvider = ({ children }: Props) => {
     []
   );
 
-  const [selectedOrganizations, setSelectedOrganizations] = useState<Beneficiary[]>([]);
+  const [selectedOrganizations, setSelectedOrganizations] = useState<
+    Beneficiary[]
+  >([]);
 
+  const [paymentPlan, setPaymentPlan] = useState<number | undefined>();
+
+  const addPaymentPlan = (plan:number)=>{
+    setPaymentPlan(plan)
+    activatePlan()
+  }
+  const removePaymentPlan = ()=>{
+    setPaymentPlan(undefined)
+    deactivatePlan()
+  }
+
+  
   const hasRendered = useRef(false);
   useEffect(() => {
     const storedFundraisers = localStorage.getItem("selectedFundraisers");
@@ -122,6 +139,9 @@ const PaymentProvider = ({ children }: Props) => {
     addOrganization,
     removeOrganization,
     removeAllOrganizations,
+    paymentPlan,
+    addPaymentPlan,
+    removePaymentPlan
   };
 
   return (

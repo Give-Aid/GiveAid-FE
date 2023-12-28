@@ -23,6 +23,9 @@ interface PaymentContextProps {
   addOrganization: (fundraiser: Beneficiary) => void;
   removeOrganization: (id: number) => void;
   removeAllOrganizations: () => void;
+  paymentPlan: number | undefined;
+  addPaymentPlan: (plan:number) => void;
+  removePaymentPlan: () => void;
 }
 
 export type { Beneficiary, PaymentContextProps };
