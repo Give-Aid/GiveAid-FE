@@ -4,6 +4,8 @@ import Dropdown from "./dropdown";
 import MobileNav from "./mobileNav";
 import { Hamburger, DefaultAvatar } from "../icons";
 import Image from "next/image";
+import { usePaymentContext } from "@/context/paymentProvider";
+import { Toggle } from "../components";
 
 type Props = {};
 
@@ -11,6 +13,7 @@ const Navbar = (props: Props) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [isUser, setIsUser] = useState(false);
+  const { paymentPlan } = usePaymentContext();
 
   const handleClickOutside = (event: any) => {
     if (showDropDown === false || event.target.closest(".my-dropdown")) return;
@@ -45,16 +48,11 @@ const Navbar = (props: Props) => {
       <nav className="bg-sky-600 pb-5">
         <div className="nav">
           <Link href="/" className="z-50">
-            <div className="md:w-[250px] w-[150px] h-[50px] relative">
-              <div className="md:w-[250px] w-[150px] h-[50px] relative">
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src="/images/logowhite.png"
-                  alt="Give Aid Logo"
-                />
-              </div>
-            </div>
+            <img
+              className="md:w-[250px] w-[160px]"
+              src="/images/logowhite.png"
+              alt="Give Aid Logo"
+            />
           </Link>
 
           {/*Large Screen*/}
@@ -68,8 +66,12 @@ const Navbar = (props: Props) => {
               <Link href="/fundraisers">Fundraisers</Link>
             </div>
             <div className="flex gap-6 font-medium">
-              <Link href="/sadaqah-jariyah" className="text-yellow-300 ">Sadaqah Jariyah</Link>
-              <Link href="/urgent-needs" className="text-red-300">Urgent Needs!</Link>
+              <Link href="/sadaqah-jariyah" className="text-yellow-300 ">
+                Sadaqah Jariyah
+              </Link>
+              <Link href="/urgent-needs" className="text-red-300">
+                Urgent Needs!
+              </Link>
             </div>
           </div>
 
@@ -105,8 +107,21 @@ const Navbar = (props: Props) => {
           {/* Hamburger */}
           {showNav && <MobileNav />}
         </div>
-        <div className="flex justify-end w-full">
-          <button type="button" className="hambuger my-nav mr-4" onClick={openNav}>
+        <div
+          className={`flex ${
+            paymentPlan === undefined ? "justify-end" : "justify-between"
+          } w-full`}
+        >
+          {paymentPlan && (
+            <div className="ml-4 md:ml-16 mt-4 w-10">
+              <Toggle />
+            </div>
+          )}
+          <button
+            type="button"
+            className="hambuger my-nav mr-4"
+            onClick={openNav}
+          >
             <Hamburger />
           </button>
         </div>

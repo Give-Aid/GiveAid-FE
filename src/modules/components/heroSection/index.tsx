@@ -1,8 +1,16 @@
+import { usePaymentContext } from "@/context/paymentProvider";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
 
 const HeroSection = (props: Props) => {
+  const { addPaymentPlan, paymentPlan, removePaymentPlan } =
+    usePaymentContext();
+  // const currentDate = new Date();
+  // const currentDay = currentDate.getDay();
+  // const isFriday = currentDay === 5;
+
   return (
     <div className="py-5 bg-gradient-to-b from-sky-600 to-sky-900">
       <div className="container">
@@ -17,10 +25,29 @@ const HeroSection = (props: Props) => {
             Let&apos;s make the world better together
           </h1>
           <div className="flex flex-col gap-3 mt-10">
-            <button className="white-btn w-fit">One Time Donation</button>
-            <button className="golden-btn w-fit">
-              Automate Ramadan Donations
-            </button>
+            <Link href={"/fundraisers"}>
+              <button className="white-btn w-fit">One Time Donation</button>
+            </Link>
+            {!paymentPlan ? (
+              <button
+                className="golden-btn w-fit"
+                onClick={() => addPaymentPlan(100)}
+              >
+                Automate Ramadan Donations
+              </button>
+            ) : (
+              <button
+                className="golden-btn w-fit"
+                onClick={() => removePaymentPlan()}
+              >
+                Deactivate Ramadan Donations
+              </button>
+            )}
+            {/* {isFriday && (
+              <button onClick={handleFridayDonation}>
+                Automate Friday Donating
+              </button>
+            )} */}
           </div>
         </div>
       </div>

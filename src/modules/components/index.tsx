@@ -18,3 +18,4 @@ export { default as SearchBar } from "./searchBar";
 export { default as Filter } from "./filter";
 export { default as PaymentBar } from "./paymentBar";
 export { default as Info } from "./info";
+export { default as Toggle } from "./toggle";

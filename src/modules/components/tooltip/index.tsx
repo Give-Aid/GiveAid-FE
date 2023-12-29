@@ -28,7 +28,7 @@ const Tooltip = (props: Props) => {
             transition: "opacity 0.2s ease-in-out, transform 0.2s ease-in-out",
           }}
         >
-          
+          Hello
         </div>
       )}
     </div>

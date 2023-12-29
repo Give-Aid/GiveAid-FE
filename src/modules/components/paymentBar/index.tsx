@@ -2,7 +2,9 @@ import { Beneficiary } from "@/utils/types";
 import React from "react";
 import { FaCircleDot } from "react-icons/fa6";
 import { IoIosCloseCircle, IoMdClose } from "react-icons/io";
-import { TbCurrencyNaira } from "react-icons/tb";
+import { TbCurrencyNaira, TbMoonStars } from "react-icons/tb";
+import { RiMoonClearFill } from "react-icons/ri";
+import { usePaymentContext } from "@/context/paymentProvider";
 
 type Props = {
   type: "Fundraisers" | "Organizations";
@@ -11,11 +13,16 @@ type Props = {
   removeAllBeneficiaries: () => void;
 };
 
-const PaymentBar = ({ type, beneficiaries, removeBeneficiary, removeAllBeneficiaries }: Props) => {
-  const card = [1, 2, 3, 4, 5, 6, 7];
+const PaymentBar = ({
+  type,
+  beneficiaries,
+  removeBeneficiary,
+  removeAllBeneficiaries,
+}: Props) => {
+  const { paymentPlan } = usePaymentContext();
   return (
     <div className="payment-bar">
-      <button onClick={()=>removeAllBeneficiaries()}>
+      <button onClick={() => removeAllBeneficiaries()}>
         <IoMdClose className="close-bar" />
       </button>
       <div className="container px-2 py-9 md:py-5">
@@ -32,7 +39,21 @@ const PaymentBar = ({ type, beneficiaries, removeBeneficiary, removeAllBeneficia
             </div>
             <input type="text" className="payment-input" placeholder="Amount" />
           </div>
-          <button className="blue-btn">Proceed</button>
+          <div className="relative">
+            <button
+              className={`blue-btn ${
+                beneficiaries.length === 1 && "cursor-not-allowed opacity-60"
+              }`}
+              disabled={beneficiaries.length === 1}
+            >
+              Proceed
+            </button>
+            {paymentPlan && (
+              <div className="absolute right-[-5px] bottom-[-5px] bg-black p-1 rounded-full">
+                <RiMoonClearFill className="text-[18px] text-yellow-300" />
+              </div>
+            )}
+          </div>
         </div>
         <div className="">
           {beneficiaries.map((b) => (
@@ -40,7 +61,7 @@ const PaymentBar = ({ type, beneficiaries, removeBeneficiary, removeAllBeneficia
               <div className="flex gap-2 items-center text-sm">
                 <FaCircleDot /> {b.name}
               </div>
-              <button onClick={()=>removeBeneficiary(b.id)}>
+              <button onClick={() => removeBeneficiary(b.id)}>
                 <IoIosCloseCircle className="text-[24px]" />
               </button>
             </div>
