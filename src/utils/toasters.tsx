@@ -51,8 +51,8 @@ const activatePlan = () =>
         <div className="mt-2 font-normal">
           All donations made from now until the end of Ramadan will be recurring
           daily. Your support will make a lasting impact throughout this holy
-          month. Thank you for your generosity! To diable, click 'Deactivate
-          Ramadan Donations' button or the toggle on the navigation bar.
+          month. Thank you for your generosity! To diable, click &apos;Deactivate
+          Ramadan Donations&apos; button or the toggle on the navigation bar.
         </div>
       </div>
     ),
