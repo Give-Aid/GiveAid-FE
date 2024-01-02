@@ -16,11 +16,11 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const { isAuthPage, name, title } = Component;
- 
+
 
   let page = (
     <Layout title={title || name}>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </Layout>
   );
 

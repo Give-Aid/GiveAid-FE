@@ -4,13 +4,18 @@ import Dropdown from "./dropdown";
 import MobileNav from "./mobileNav";
 import { Hamburger, DefaultAvatar } from "../icons";
 import Image from "next/image";
+import { SignedIn, SignedOut, UserButton, auth, currentUser } from "@clerk/nextjs";
 
 type Props = {};
 
-const Navbar = (props: Props) => {
+const Navbar =  (props: Props) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [isUser, setIsUser] = useState(false);
+
+    // const user = await currentUser();
+    // console.log('user', user);
+  
 
   const handleClickOutside = (event: any) => {
     if (showDropDown === false || event.target.closest(".my-dropdown")) return;
@@ -40,6 +45,10 @@ const Navbar = (props: Props) => {
     setShowDropDown(!showDropDown);
   };
 
+  // const user = await currentUser();
+  // const { userId } = auth();
+
+
   return (
     <>
       <nav className="bg-sky-600 pb-5">
@@ -67,28 +76,46 @@ const Navbar = (props: Props) => {
           </div>
 
           <div className="flex items-center md:w-[350px] w-[full] space-x-3 justify-end mr-3">
-            {isUser ? (
-              <button
-                type="button"
-                className="avatar my-dropdown"
-                onClick={openDropDown}
-              >
-                {/* <img
+
+            {/* {isUser ? ( */}
+            {/* <button
+              type="button"
+              className="avatar my-dropdown"
+              onClick={openDropDown}
+            > */}
+            {/* <img
                 className="w-7 h-7 rounded-full"
                 src="/images/icont.png"
                 alt="user photo"
               /> */}
 
-                <div className="default-avatar">
+            {/* <div className="default-avatar">
                   <DefaultAvatar />
-                </div>
-              </button>
-            ) : (
-              <div className="gap-3 justify-end flex z-50">
-                <button>Sign In</button>
-                <button className="signup">Sign Up</button>
+                </div> */}
+            {/* </button> */}
+            {/* ) : ( */}
+            {/* // <SignOutButton signOutCallback={() => router.push("/sign-in")}> */}
+
+
+            {/* {!userId && ( */}
+            <SignedOut>
+              <div className="gap-3 items-center justify-end flex z-50">
+                <Link href='sign-in' className=" ">Sign In</Link>
+                <Link href='sign-up' className="signup">Sign Up</Link>
               </div>
-            )}
+            </SignedOut>
+            <div className="gap-3 items-center justify-end flex z-50">
+
+              <Link href='/' className="signup">Sign Out</Link>
+
+
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
+            </div>
+            {/* )} */}
+
+            {/* )} */}
 
             {/* Mobile */}
           </div>
