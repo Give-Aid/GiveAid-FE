@@ -176,3 +176,6 @@ const TermsOfUse = (props: Props) => {
 };
 
 export default TermsOfUse;
+TermsOfUse.title = "Give Aid: Terms and Conditions";
+TermsOfUse.isAuthPage = false;
+TermsOfUse.ignoreLayout = false;

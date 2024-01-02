@@ -23,3 +23,4 @@ export default function Home() {
 Home.title =
   "Give Aid: Empowering Giving - Donate to Fundraisers & Organizations";
 Home.isAuthPage = false;
+Home.ignoreLayout = false;

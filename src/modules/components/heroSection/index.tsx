@@ -11,6 +11,15 @@ const HeroSection = (props: Props) => {
   // const currentDay = currentDate.getDay();
   // const isFriday = currentDay === 5;
 
+  
+  // const activatePlan = ()=>{
+  //   if (user){
+  //     addPaymentPlan(100)
+  //   } else {
+  //     router.push('/sign-in')
+  //   }
+  // }
+
   return (
     <div className="py-5 bg-gradient-to-b from-sky-600 to-sky-900">
       <div className="container">

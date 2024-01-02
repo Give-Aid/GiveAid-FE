@@ -90,3 +90,4 @@ const SadaqahJariyah = (props: Props) => {
 export default SadaqahJariyah;
 SadaqahJariyah.title = "Give Aid: Explort Sadaqah Jariyah Opportunities";
 SadaqahJariyah.isAuthPage = false;
+SadaqahJariyah.ignoreLayout = false;

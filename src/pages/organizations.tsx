@@ -90,3 +90,4 @@ const Organizations = (props: Props) => {
 export default Organizations;
 Organizations.title = "Give Aid: Donate to Organizations with us";
 Organizations.isAuthPage = false;
+Organizations.ignoreLayout = false;

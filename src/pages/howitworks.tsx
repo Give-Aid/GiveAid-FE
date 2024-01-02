@@ -27,3 +27,4 @@ const HowItWorks = (props: Props) => {
 export default HowItWorks;
 HowItWorks.title = "Give Aid: How the Platform Works";
 HowItWorks.isAuthPage = false;
+HowItWorks.ignoreLayout = false;
