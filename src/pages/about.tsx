@@ -46,3 +46,4 @@ export default About;
 About.title =
   "About Give Aid: Empowering Giving - Donate to Fundraisers & Organizations";
 About.isAuthPage = false;
+About.ignoreLayout = false;

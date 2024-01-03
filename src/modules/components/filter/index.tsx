@@ -128,7 +128,7 @@ const Filter = ({ type }: Props) => {
                     value={cause.value}
                     className="mr-2 w-4 h-4 checked:bg-sky-500"
                   />
-                  <label htmlFor="healthCare">{cause.value}</label>
+                  <label htmlFor={cause.value}>{cause.value}</label>
                 </div>
               ))}
             </CollapsibleContent>
@@ -148,7 +148,7 @@ const Filter = ({ type }: Props) => {
                       value={date.id}
                       className="mr-2 w-4 h-4"
                     />
-                    <label htmlFor="healthCare">{date.value}</label>
+                    <label htmlFor={date.value}>{date.value}</label>
                   </div>
                 ))}
               </CollapsibleContent>

@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 
 export type NextPageWithLayout = NextPage & {
   isAuthPage?: boolean;
+  ignoreLayout?: boolean;
   title?: string;
 };
 

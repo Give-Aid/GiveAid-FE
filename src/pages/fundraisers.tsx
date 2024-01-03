@@ -83,3 +83,4 @@ const Fundraisers = (props: Props) => {
 export default Fundraisers;
 Fundraisers.title = "Give Aid: Donate to our Fundraiser Campaigns";
 Fundraisers.isAuthPage = false;
+Fundraisers.ignoreLayout = false;

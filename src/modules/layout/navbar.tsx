@@ -6,6 +6,9 @@ import { Hamburger, DefaultAvatar } from "../icons";
 import Image from "next/image";
 import { usePaymentContext } from "@/context/paymentProvider";
 import { Toggle } from "../components";
+import { MdDashboard } from "react-icons/md";
+import { useRouter } from "next/router";
+
 
 type Props = {};
 
@@ -14,6 +17,7 @@ const Navbar = (props: Props) => {
   const [showNav, setShowNav] = useState(false);
   const [isUser, setIsUser] = useState(false);
   const { paymentPlan } = usePaymentContext();
+  const router = useRouter()
 
   const handleClickOutside = (event: any) => {
     if (showDropDown === false || event.target.closest(".my-dropdown")) return;
@@ -38,9 +42,8 @@ const Navbar = (props: Props) => {
     setShowNav(!showNav);
     setShowDropDown(false);
   };
-  const openDropDown = () => {
-    setShowNav(false);
-    setShowDropDown(!showDropDown);
+  const goToDashboard = () => {
+    router.push('/dashboard')
   };
 
   return (
@@ -76,22 +79,8 @@ const Navbar = (props: Props) => {
           </div>
 
           <div className="flex items-center md:w-[350px] w-[full] space-x-3 justify-end mr-3">
-            {isUser ? (
-              <button
-                type="button"
-                className="avatar my-dropdown"
-                onClick={openDropDown}
-              >
-                {/* <img
-                className="w-7 h-7 rounded-full"
-                src="/images/icont.png"
-                alt="user photo"
-              /> */}
-
-                <div className="default-avatar">
-                  <DefaultAvatar />
-                </div>
-              </button>
+            {!isUser ? (
+              <MdDashboard className="text-[24px] md:text-[28px] cursor-pointer" onClick={goToDashboard}/>
             ) : (
               <div className="gap-3 justify-end flex z-50">
                 <button>Sign In</button>

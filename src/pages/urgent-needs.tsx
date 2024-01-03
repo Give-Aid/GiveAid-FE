@@ -95,3 +95,4 @@ const UrgentNeeds = (props: Props) => {
 export default UrgentNeeds;
 UrgentNeeds.title = "Give Aid: Support Critical Urgencies Today";
 UrgentNeeds.isAuthPage = false;
+UrgentNeeds.ignoreLayout = false;

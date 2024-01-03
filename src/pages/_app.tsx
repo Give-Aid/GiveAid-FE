@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
-  const { isAuthPage, name, title } = Component;
+  const { isAuthPage, ignoreLayout, name, title } = Component;
 
   let page = (
     <Layout title={title || name}>
@@ -32,6 +32,11 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   //     </DashboardLayout>
   //   );
   // }
+
+  if (ignoreLayout) {
+    page = <Component {...pageProps} />;
+  }
+
   return (
     <>
       <PaymentProvider>

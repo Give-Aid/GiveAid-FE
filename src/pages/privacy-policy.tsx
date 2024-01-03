@@ -125,3 +125,6 @@ const PrivacPolicy = (props: Props) => {
 };
 
 export default PrivacPolicy;
+PrivacPolicy.title = "Give Aid: Privacy Policy";
+PrivacPolicy.isAuthPage = false;
+PrivacPolicy.ignoreLayout = false;
