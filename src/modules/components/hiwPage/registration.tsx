@@ -5,6 +5,7 @@ import {
   TbHexagon2Filled,
   TbHexagon3Filled,
 } from "react-icons/tb";
+import Link from "next/link";
 
 type Props = {};
 
@@ -14,8 +15,11 @@ const Registration = (props: Props) => {
       title: "Registering as an Organization:",
       details: (
         <div>
-          Click on the <a className="text-sky-500 underline" href="#">Register Organization</a> link prominently displayed on our
-          platform&apos;s pages.
+          <Link className="text-sky-500 underline" href="/sign-up">
+            Sign up
+          </Link>{" "}
+          with us and continue as an organization. You&apos;ll be redirected to
+          your dahsboard where you&apos;ll be prompted to complete your profile.
         </div>
       ),
       icon: <TbHexagon1Filled />,
@@ -48,10 +52,16 @@ const Registration = (props: Props) => {
       title: "Initiating a Fundraiser:",
       details: (
         <div>
-          When your organization has been approved, Click on the <a className="text-sky-500 underline" href="#">Create Fundraiser</a> link on your dashboard to kick-start your fundraising
-          campaign. Non-Organizatins are also welcome to create fundraisers by
-          Clicking on the <a className="text-sky-500 underline" href="#">Create Fundraiser</a> link, And you&apos;ll be required to
-          provide convincing evidence and necessary documents where necessary.
+          When your organization has been approved, Click on the Create
+          Fundraiser link on your dashboard to kick-start your fundraising
+          campaign. Non-Organizatins are also welcome to create fundraisers by{" "}
+          <Link className="text-sky-500 underline" href="/sign-up">
+            Signing up
+          </Link>{" "}
+          and selecting to continue as an independent fundraiser. You&apos;ll be
+          redirected to your dahsboard where you&apos;ll be prompted to complete
+          your profile. Please provide convincing evidence and necessary
+          documents where necessary.
         </div>
       ),
       icon: <TbHexagon1Filled />,

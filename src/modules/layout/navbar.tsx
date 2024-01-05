@@ -9,7 +9,6 @@ import { Toggle } from "../components";
 import { MdDashboard } from "react-icons/md";
 import { useRouter } from "next/router";
 
-
 type Props = {};
 
 const Navbar = (props: Props) => {
@@ -17,19 +16,19 @@ const Navbar = (props: Props) => {
   const [showNav, setShowNav] = useState(false);
   const [isUser, setIsUser] = useState(false);
   const { paymentPlan } = usePaymentContext();
-  const router = useRouter()
-
-  const handleClickOutside = (event: any) => {
-    if (showDropDown === false || event.target.closest(".my-dropdown")) return;
-    setShowDropDown(false);
-  };
-
-  const handleClickOutside2 = (event: any) => {
-    if (showNav === false || event.target.closest(".my-nav")) return;
-    setShowNav(false);
-  };
+  const router = useRouter();
 
   useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (showDropDown === false || event.target.closest(".my-dropdown"))
+        return;
+      setShowDropDown(false);
+    };
+
+    const handleClickOutside2 = (event: any) => {
+      if (showNav === false || event.target.closest(".my-nav")) return;
+      setShowNav(false);
+    };
     document.addEventListener("click", handleClickOutside);
     document.addEventListener("click", handleClickOutside2);
     return () => {
@@ -43,7 +42,7 @@ const Navbar = (props: Props) => {
     setShowDropDown(false);
   };
   const goToDashboard = () => {
-    router.push('/dashboard')
+    router.push("/dashboard");
   };
 
   return (
@@ -80,7 +79,10 @@ const Navbar = (props: Props) => {
 
           <div className="flex items-center md:w-[350px] w-[full] space-x-3 justify-end mr-3">
             {!isUser ? (
-              <MdDashboard className="text-[24px] md:text-[28px] cursor-pointer" onClick={goToDashboard}/>
+              <MdDashboard
+                className="text-[24px] md:text-[28px] cursor-pointer"
+                onClick={goToDashboard}
+              />
             ) : (
               <div className="gap-3 justify-end flex z-50">
                 <button>Sign In</button>

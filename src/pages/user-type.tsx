@@ -15,7 +15,7 @@ const UserType = (props: Props) => {
     },
     {
       value: "fundraiser",
-      text: "Fundraiser",
+      text: "Independent Fundraiser",
     },
   ];
   const setUserType = (e: any) => {

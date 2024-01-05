@@ -119,7 +119,7 @@ const FundraisersCard = ({ type, beneficiary }: Props) => {
               funded of N1,000,000
             </p>
           </div>
-          <Link href={"/"}>
+          <Link href={"/fundraisers/id"}>
             <button className="blue-btn">Donate</button>
           </Link>
         </div>

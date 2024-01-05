@@ -41,7 +41,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     <>
       <PaymentProvider>
         <Toaster />
-        <main className={poppins.className}>{page}</main>
+        <main className={inter.className}>
+          {page}
+        </main>
       </PaymentProvider>
     </>
   );

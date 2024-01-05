@@ -1,4 +1,5 @@
 import { AboutUs, WhyUs, PainPoints, Quote,Faq } from "@/modules/components";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -32,7 +33,7 @@ const About = (props: Props) => {
           />
           <div className="w-full h-full absolute inset-0 bg-gradient-to-t from-transparent to-black/80 p-4 md:p-10">
             <p className="text-white text-[22px] md:text-[26px] md:w-[50%]">Every ripple creates a wave. Your generosity can change their world, no matter how small.</p>
-            <button className="white-btn mt-2 text-black block">Transfrom Lives</button>
+            <Link href="/fundraisers"><button className="white-btn mt-2 text-black block">Transfrom Lives</button></Link>
           </div>
         </div>
       </div>
