@@ -3,6 +3,7 @@ import { GiPadlock, GiMeshNetwork } from "react-icons/gi";
 import { FaEye, FaMoneyBillTrendUp } from "react-icons/fa6";
 import { FaInfinity } from "react-icons/fa";
 import { BiSolidHappyBeaming } from "react-icons/bi";
+import Link from "next/link";
 
 type Props = {};
 
@@ -10,9 +11,7 @@ const WhatWeDo1 = (props: Props) => {
   return (
     <div className="grid md:grid-cols-2 gap-14 mt-10 container">
       <div className="flex flex-col items-center">
-        <p className="heading-gradient">
-          For Donors
-        </p>
+        <p className="heading-gradient">For Donors</p>
         <div className="mt-5 grid gap-5">
           <div className="flex items-center gap-5">
             <div className="w-[50px]">
@@ -62,13 +61,12 @@ const WhatWeDo1 = (props: Props) => {
           </div>
         </div>
         <div className="flex flex-wrap gap-3 mt-5 items-center">
-          <p className="font-bold text-lg">Donate and Make a Difference</p><button className="blue-btn ">Support Now</button>
+          <p className="font-bold text-lg">Donate and Make a Difference</p>
+          <Link href='/fundraisers'><button className="blue-btn ">Support Now</button></Link>
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <p className="heading-gradient">
-          For Organizations
-        </p>
+        <p className="heading-gradient">For Organizations</p>
         <div className="mt-5 grid gap-5">
           <div className="flex items-center gap-5">
             <div className="w-[80px]">
@@ -114,7 +112,8 @@ const WhatWeDo1 = (props: Props) => {
           </div>
         </div>
         <div className="flex flex-wrap gap-3 mt-5 items-center">
-          <p className="font-bold text-lg">Register Your Organization Today</p><button className="blue-btn">Join Give Aid</button>
+          <p className="font-bold text-lg">Register Your Organization Today</p>
+          <Link href='/sign-up'><button className="blue-btn">Join Give Aid</button></Link>
         </div>
       </div>
     </div>

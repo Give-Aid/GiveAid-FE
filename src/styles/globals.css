@@ -117,7 +117,7 @@
   }
 
   .fundraiser-card-duration {
-    @apply text-[10px] md:text-[12px] gap-1 text-gray-400 flex items-center
+    @apply text-[12px] md:text-[14px] gap-1 text-gray-400 flex items-center
   }
 
   .fundraiser-card-progress-g {
@@ -146,6 +146,22 @@
   }
   .naira-input {
     @apply absolute inset-y-0 start-0 flex items-center pointer-events-none text-[20px] ps-1
+  }
+
+  /* fundraiser details */
+  .details-heading {
+    @apply mb-[1rem] flex font-[700] text-[20px] md:text-[24px] gap-5 text-sky-950 items-center
+  }
+
+  .details-title {
+    @apply text-gradient from-sky-500 to-sky-700
+  }
+
+  .fundraiser-details-card{
+    @apply rounded-lg shadow-lg md:h-[600px] w-full mx-auto border border-sky-100 flex md:flex-row flex-col
+  }
+  .fundraiser-details-image{
+    @apply w-full md:w-[65%] h-[500px] md:h-full object-contain bg-black rounded-t-lg md:rounded-l-lg md:rounded-tr-none
   }
 
 }

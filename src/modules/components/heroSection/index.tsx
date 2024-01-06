@@ -34,7 +34,7 @@ const HeroSection = (props: Props) => {
             Let&apos;s make the world better together
           </h1>
           <div className="flex flex-col gap-3 mt-10">
-            <Link href={"/fundraisers"}>
+            <Link href={"/fundraisers"} className='w-fit'>
               <button className="white-btn w-fit">One Time Donation</button>
             </Link>
             {!paymentPlan ? (

@@ -5,6 +5,7 @@ import HowItWorks from "./howItWorks";
 import Quote from "../quote";
 import Trustees from "./trustees";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {};
 
@@ -61,7 +62,7 @@ const Overview = (props: Props) => {
               Let&apos;s help the helpless. Let&apos;s make the world better
               together
             </h3>
-            <button className="white-btn font-[500]">Donate Now</button>
+            <Link href='/fundraisers'><button className="white-btn font-[500]">Donate Now</button></Link>
           </div>
           <div className="mt-5 md:mt-0">
             <div className="w-[100px] md:w-[240px] h-[100px] md:h-[240px] relative">

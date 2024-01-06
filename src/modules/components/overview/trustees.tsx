@@ -26,6 +26,8 @@ const Trustees = (props: Props) => {
                 alt="trustee"
                 layout="fill"
                 objectFit="contain"
+                className="rounded-full"
+
               />
             </div>
             <p className="font-[500] text-center">Mufti Ismail Menk</p>
