@@ -5,6 +5,12 @@ import { AppPropsWithLayout } from "@/utils/types";
 import Layout from "@/modules/layout";
 import { Toaster } from "react-hot-toast";
 import PaymentProvider from "@/context/paymentProvider";
+import {
+  ClerkProvider,
+  RedirectToSignIn,
+  SignedIn,
+  SignedOut,
+} from "@clerk/nextjs";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -25,26 +31,46 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     </Layout>
   );
 
-  // if (isAuthPage) {
-  //   page = (
-  //     <DashboardLayout title={title || name}>
-  //       <Component {...pageProps} />
-  //     </DashboardLayout>
-  //   );
-  // }
-
-  if (ignoreLayout) {
+  if (ignoreLayout && isAuthPage) {
     page = <Component {...pageProps} />;
+  }
+
+  if (isAuthPage && !ignoreLayout) {
+    page = (
+      <>
+        <SignedIn>
+          {/* <DashboardLayout title={title || name}> */}
+          <Component {...pageProps} />
+          {/* </DashboardLayout> */}
+        </SignedIn>
+        <SignedOut>
+          <RedirectToSignIn />
+        </SignedOut>
+      </>
+    );
+  }
+
+  if (!isAuthPage && ignoreLayout) {
+    page = (
+      <>
+        <SignedIn>
+          <Component {...pageProps} />
+        </SignedIn>
+        <SignedOut>
+          <RedirectToSignIn />
+        </SignedOut>
+      </>
+    );
   }
 
   return (
     <>
-      <PaymentProvider>
-        <Toaster />
-        <main className={inter.className}>
-          {page}
-        </main>
-      </PaymentProvider>
+      <ClerkProvider>
+        <PaymentProvider>
+          <Toaster />
+          <main className={poppins.className}>{page}</main>
+        </PaymentProvider>
+      </ClerkProvider>
     </>
   );
 }

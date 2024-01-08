@@ -1,10 +1,15 @@
 import React from "react";
 import { Duration } from "@/modules/icons";
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
+import { FcInfo } from "react-icons/fc";
+import Link from "next/link";
+import { CopyText } from "..";
 
 type Props = {};
 
 const Head = (props: Props) => {
+  const { isSignedIn } = useUser();
   return (
     <>
       <div className="details-heading">
@@ -28,7 +33,7 @@ const Head = (props: Props) => {
           src="/images/almajiri.jpg"
           alt="verse/hadith"
         />
-        <div className="py-10 px-16 md:px-8 text-sky-950 w-full md:w-[35%] flex flex-col justify-between gap-12 bg-gradient-to-b from-sky-100 to-sky-200">
+        <div className="py-10 px-8 text-sky-950 w-full md:w-[35%] flex flex-col justify-between gap-12 bg-gradient-to-b from-sky-100 to-sky-200">
           <div className="rounded-full w-14 h-14 mx-auto relative">
             <Image
               src="/images/icont.png"
@@ -53,16 +58,30 @@ const Head = (props: Props) => {
             <p>
               Organizer: <span className="font-[600]">Give Aid</span>
             </p>
-            <p>
-              Account Number: <span className="font-[600]">0123456789</span>
-            </p>
-            <p>
-              Account Name:{" "}
-              <span className="font-[600]">Give Aid Foundation</span>
-            </p>
-            <p>
-              Bank Name: <span className="font-[600]">UBA</span>
-            </p>
+            {isSignedIn ? (
+              <>
+                <p className="flex gap-1">
+                  Account Number: <CopyText text="0123456789"/>
+                </p>
+                <p>
+                  Account Name:{" "}
+                  <span className="font-[600]">Give Aid Foundation</span>
+                </p>
+                <p>
+                  Bank Name: <span className="font-[600]">UBA</span>
+                </p>
+              </>
+            ) : (
+              <>
+                <Link href={'/sign-up'}><button className="blue-btn mt-2 w-full">View Bank Details</button></Link>
+                <div className="flex items-center gap-2 text-[12px] mb-3">
+                  <FcInfo className="text-[30px]"/>{" "}
+                  <p>
+                  To View Details, Please take a Second to Sign up/Sign In with Give Aid. Join us and Be a part of our story. Shukran!
+                  </p>
+                </div>
+              </>
+            )}
             <button className="blue-btn mt-2">Use card to donate</button>
           </div>
         </div>

@@ -14,7 +14,7 @@ const AboutFundraiser = () => {
     <>
       <div className="flex gap-4 mt-10 items-center">
         <FaTag className="text-sky-950 text-[26px]" />
-        <div className=" flex gap-2 removeScrollBar">
+        <div className=" flex gap-2 removeScrollBar flex-wrap">
           {causes.map((cause) => (
             <p key={cause} className="px-3 py-[4px] text-[14px] bg-sky-950 font-medium text-white w-fit rounded-full">
               {cause}
@@ -23,7 +23,7 @@ const AboutFundraiser = () => {
         </div>
       </div>
       <div className="flex flex-col items-start mt-10 w-full">
-        <div className="flex w-full">
+        <div className="flex w-full h-fit">
           <div
             onClick={() => openTab("AboutFundraiser")}
             className={`border-b-2 w-[50%] md:w-[250px] text-center h-8 font-[600] cursor-pointer ${

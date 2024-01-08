@@ -49,6 +49,9 @@
     @apply w-[95%] md:w-[90%] mx-auto max-w-screen-xl;
   }
 
+  .center-page{
+    @apply flex justify-center items-center min-h-screen
+  }
   /* navbar */
   .nav {
     @apply container flex items-center pt-4 justify-between text-white font-[400] text-[14px] relative
@@ -161,7 +164,7 @@
     @apply rounded-lg shadow-lg md:h-[600px] w-full mx-auto border border-sky-100 flex md:flex-row flex-col
   }
   .fundraiser-details-image{
-    @apply w-full md:w-[65%] h-[500px] md:h-full object-contain bg-black rounded-t-lg md:rounded-l-lg md:rounded-tr-none
+    @apply w-full md:w-[65%] h-[600px] md:h-full object-contain bg-black rounded-t-lg md:rounded-l-lg md:rounded-tr-none
   }
 
 }
@@ -173,4 +176,9 @@
 button {
   outline: none;
   -webkit-touch-callout: none;
+}
+
+.cl-internal-11ewti4 , .cl-avatarBox, .cl-userButtonAvatarBox{
+  width: 3rem;
+  height: 3rem;
 }

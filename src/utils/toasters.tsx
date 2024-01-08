@@ -64,7 +64,7 @@ const activatePlan = () =>
     }
   );
 const deactivatePlan = () =>
-  toast(`Automated Ramadan Donations Deactivated!`, {
+  toast(`Automate Ramadan Donations Deactivated!`, {
     style: planStyle,
     className: className,
     position: "top-left",
