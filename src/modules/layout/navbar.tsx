@@ -3,20 +3,21 @@ import Link from "next/link";
 import Dropdown from "./dropdown";
 import MobileNav from "./mobileNav";
 import { Hamburger, DefaultAvatar } from "../icons";
-import Image from "next/image";
 import { usePaymentContext } from "@/context/paymentProvider";
 import { Toggle } from "../components";
 import { MdDashboard } from "react-icons/md";
 import { useRouter } from "next/router";
+import { UserButton, useAuth, useUser } from "@clerk/nextjs";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showNav, setShowNav] = useState(false);
-  const [isUser, setIsUser] = useState(false);
   const { paymentPlan } = usePaymentContext();
   const router = useRouter();
+  const { user, isSignedIn, isLoaded } = useUser();
+  const userType = user?.unsafeMetadata?.userType;
 
   useEffect(() => {
     const handleClickOutside = (event: any) => {
@@ -24,7 +25,6 @@ const Navbar = (props: Props) => {
         return;
       setShowDropDown(false);
     };
-
     const handleClickOutside2 = (event: any) => {
       if (showNav === false || event.target.closest(".my-nav")) return;
       setShowNav(false);
@@ -41,17 +41,18 @@ const Navbar = (props: Props) => {
     setShowNav(!showNav);
     setShowDropDown(false);
   };
+
   const goToDashboard = () => {
-    router.push("/dashboard");
+    router.push(`/app/${userType}_dashboard`);
   };
 
   return (
     <>
       <nav className="bg-sky-600 pb-5">
         <div className="nav">
-          <Link href="/" className="z-50">
+          <Link href="/" className="z-50 mr-5">
             <img
-              className="md:w-[250px] w-[160px]"
+              className="md:w-[300px] w-[160px]"
               src="/images/logowhite.png"
               alt="Give Aid Logo"
             />
@@ -77,21 +78,28 @@ const Navbar = (props: Props) => {
             </div>
           </div>
 
-          <div className="flex items-center md:w-[350px] w-[full] space-x-3 justify-end mr-3">
-            {!isUser ? (
-              <MdDashboard
-                className="text-[24px] md:text-[28px] cursor-pointer"
-                onClick={goToDashboard}
-              />
-            ) : (
-              <div className="gap-3 justify-end flex z-50">
-                <button>Sign In</button>
-                <button className="signup">Sign Up</button>
-              </div>
-            )}
-
-            {/* Mobile */}
-          </div>
+          {isLoaded && (
+            <div className="flex items-center md:w-[300px] w-[full] space-x-3 justify-end mr-3">
+              {isSignedIn ? (
+                <div className="gap-3 justify-end flex z-50 items-center">
+                  <MdDashboard
+                    className="text-[24px] md:text-[28px] cursor-pointer"
+                    onClick={goToDashboard}
+                  />
+                  <UserButton afterSignOutUrl="/" />
+                </div>
+              ) : (
+                <div className="gap-3 justify-end flex z-50 items-center">
+                  <Link href={"/sign-in"}>
+                    <button>Sign In</button>
+                  </Link>
+                  <Link href={"/sign-up"}>
+                    <button className="signup">Sign Up</button>
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* <!-- Dropdown menu --> */}
           {showDropDown && <Dropdown />}
@@ -110,7 +118,7 @@ const Navbar = (props: Props) => {
           )}
           <button
             type="button"
-            className="hambuger my-nav mr-4"
+            className="hambuger my-nav mr-5 mt-2"
             onClick={openNav}
           >
             <Hamburger />

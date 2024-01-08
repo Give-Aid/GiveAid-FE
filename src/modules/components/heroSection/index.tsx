@@ -1,4 +1,5 @@
 import { usePaymentContext } from "@/context/paymentProvider";
+import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 
@@ -7,6 +8,7 @@ type Props = {};
 const HeroSection = (props: Props) => {
   const { addPaymentPlan, paymentPlan, removePaymentPlan } =
     usePaymentContext();
+    const {isSignedIn} = useUser()
   // const currentDate = new Date();
   // const currentDay = currentDate.getDay();
   // const isFriday = currentDay === 5;
@@ -39,15 +41,17 @@ const HeroSection = (props: Props) => {
             </Link>
             {!paymentPlan ? (
               <button
-                className="golden-btn w-fit"
+                className={`golden-btn w-fit disabled:opacity-80 disabled:cursor-not-allowed`}
                 onClick={() => addPaymentPlan(100)}
+                disabled={!isSignedIn}
               >
                 Automate Ramadan Donations
               </button>
             ) : (
               <button
-                className="golden-btn w-fit"
+                className={`golden-btn w-fit`}
                 onClick={() => removePaymentPlan()}
+                
               >
                 Deactivate Ramadan Donations
               </button>

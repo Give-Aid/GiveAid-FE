@@ -19,3 +19,5 @@ export { default as Filter } from "./filter";
 export { default as PaymentBar } from "./paymentBar";
 export { default as Info } from "./info";
 export { default as Toggle } from "./toggle";
+export { default as Loader } from "./loader";
+export { default as CopyText } from "./copyText";
