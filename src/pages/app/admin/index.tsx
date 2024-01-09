@@ -5,19 +5,20 @@ import { useEffect } from "react";
 
 type Props = {};
 
-const App = (props: Props) => {
-  const router = useRouter();
+const AdminDashboard = (props: Props) => {
   const { user } = useUser();
+  const router = useRouter();
+  const userType = user?.unsafeMetadata?.userType;
 
   useEffect(() => {
-    const userType = user?.unsafeMetadata?.userType;
-    if (user && user?.unsafeMetadata?.userType) {
+    if (user && !userType) {
+      router.push("/user-type");
+    } else {
       switch (userType) {
+        case "admin":
+          break;
         case "donor":
           router.push("/app/donor");
-          break;
-        case "admin":
-          router.push("/app/admin");
           break;
         case "organization":
           router.push("/app/organization");
@@ -29,19 +30,21 @@ const App = (props: Props) => {
           router.push("/");
           break;
       }
-    } else {
-      router.push("/user-type");
     }
   }, []);
 
-  return (
-    <div className="center-page flex-col gap-5">
-      <h1 className="text-[24px] text-sky-950 font-bold">Redirecting...</h1>
-      <Loader w={"20"} h={"20"} />
-    </div>
-  );
+  if (userType === "admin") {
+    return (
+      <div className="center-page flex-col">
+        <Loader w={"20"} h={"20"} />
+      </div>
+    );
+  }
+
+  return <div>AdminDashboard</div>;
 };
 
-export default App;
-App.isAuthPage = false;
-App.ignoreLayout = true;
+export default AdminDashboard;
+AdminDashboard.title = "Dashboard - Give Aid";
+AdminDashboard.isAuthPage = true;
+AdminDashboard.ignoreLayout = false;

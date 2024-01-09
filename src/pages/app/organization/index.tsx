@@ -2,7 +2,7 @@ import { Loader } from "@/modules/components";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-type Props = {}
+type Props = {};
 
 const OrganizationDashboard = (props: Props) => {
   const { user } = useUser();
@@ -17,13 +17,13 @@ const OrganizationDashboard = (props: Props) => {
         case "organization":
           break;
         case "donor":
-          router.push("/app/donor_dashboard");
+          router.push("/app/donor");
           break;
         case "admin":
-          router.push("/app/admin_dashboard");
+          router.push("/app/admin");
           break;
         case "fundraiser":
-          router.push("/app/fundraiser_dashboard");
+          router.push("/app/fundraiser");
           break;
         default:
           router.push("/");
@@ -32,18 +32,18 @@ const OrganizationDashboard = (props: Props) => {
     }
   }, []);
 
-  if (userType === "organization") {
-    return <div>OrganizationDashboard</div>;
+  if (userType !== "organization") {
+    return (
+      <div className="center-page flex-col">
+        <Loader w={"20"} h={"20"} />
+      </div>
+    );
   }
 
-  return (
-    <div className="center-page flex-col">
-      <Loader w={"20"} h={"20"} />
-    </div>
-  );
-}
+  return <div>OrganizationDashboard</div>;
+};
 
-export default OrganizationDashboard
+export default OrganizationDashboard;
 OrganizationDashboard.title = "Dashboard - Give Aid";
 OrganizationDashboard.isAuthPage = true;
 OrganizationDashboard.ignoreLayout = false;

@@ -43,7 +43,7 @@ const Navbar = (props: Props) => {
   };
 
   const goToDashboard = () => {
-    router.push(`/app/${userType}_dashboard`);
+    router.push(`/app/${userType}`);
   };
 
   return (

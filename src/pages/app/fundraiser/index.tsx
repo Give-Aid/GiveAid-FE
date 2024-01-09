@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 type Props = {};
 
-const DonorDashboard = (props: Props) => {
+const FundraiserDashboard = (props: Props) => {
   const { user } = useUser();
   const router = useRouter();
   const userType = user?.unsafeMetadata?.userType;
@@ -15,17 +15,18 @@ const DonorDashboard = (props: Props) => {
       router.push("/user-type");
     } else {
       switch (userType) {
+        case "fundraiser":
+          break;
         case "donor":
+          router.push("/app/donor");
           break;
         case "admin":
-          router.push("/app/admin_dashboard");
+          router.push("/app/admin");
           break;
         case "organization":
-          router.push("/app/organization_dashboard");
+          router.push("/app/organization");
           break;
-        case "fundraiser":
-          router.push("/app/fundraiser_dashboard");
-          break;
+
         default:
           router.push("/");
           break;
@@ -33,18 +34,18 @@ const DonorDashboard = (props: Props) => {
     }
   }, []);
 
-  if (userType === "donor") {
-    return <div>DonorDashboard</div>;
+  if (userType !== "fundraiser") {
+    return (
+      <div className="center-page flex-col">
+        <Loader w={"20"} h={"20"} />
+      </div>
+    );
   }
 
-  return (
-    <div className="center-page flex-col">
-      <Loader w={"20"} h={"20"} />
-    </div>
-  );
+  return <div>FundraiserDashboard</div>;
 };
 
-export default DonorDashboard;
-DonorDashboard.title = "Dashboard - Give Aid";
-DonorDashboard.isAuthPage = true;
-DonorDashboard.ignoreLayout = false;
+export default FundraiserDashboard;
+FundraiserDashboard.title = "Dashboard - Give Aid";
+FundraiserDashboard.isAuthPage = true;
+FundraiserDashboard.ignoreLayout = false;
