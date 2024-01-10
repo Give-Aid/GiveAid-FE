@@ -13,24 +13,9 @@ const FundraiserDashboard = (props: Props) => {
   useEffect(() => {
     if (user && !userType) {
       router.push("/user-type");
-    } else {
-      switch (userType) {
-        case "fundraiser":
-          break;
-        case "donor":
-          router.push("/app/donor");
-          break;
-        case "admin":
-          router.push("/app/admin");
-          break;
-        case "organization":
-          router.push("/app/organization");
-          break;
-
-        default:
-          router.push("/");
-          break;
-      }
+    } 
+    if(userType !== 'fundraiser'){
+      router.push("/app");
     }
   }, []);
 

@@ -11,6 +11,7 @@ import {
   SignedIn,
   SignedOut,
 } from "@clerk/nextjs";
+import DashboardLayout from "@/modules/layout/dashboardLayout";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -39,9 +40,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     page = (
       <>
         <SignedIn>
-          {/* <DashboardLayout title={title || name}> */}
+          <DashboardLayout title={title || name}>
           <Component {...pageProps} />
-          {/* </DashboardLayout> */}
+          </DashboardLayout>
         </SignedIn>
         <SignedOut>
           <RedirectToSignIn />

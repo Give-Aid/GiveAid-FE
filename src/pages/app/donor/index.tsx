@@ -13,23 +13,10 @@ const DonorDashboard = (props: Props) => {
   useEffect(() => {
     if (user && !userType) {
       router.push("/user-type");
-    } else {
-      switch (userType) {
-        case "donor":
-          break;
-        case "admin":
-          router.push("/app/admin");
-          break;
-        case "organization":
-          router.push("/app/organization");
-          break;
-        case "fundraiser":
-          router.push("/app/fundraiser");
-          break;
-        default:
-          router.push("/");
-          break;
-      }
+    } 
+    
+    if(userType !== 'donor'){
+      router.push("/app");
     }
   }, []);
 

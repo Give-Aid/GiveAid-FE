@@ -12,23 +12,9 @@ const OrganizationDashboard = (props: Props) => {
   useEffect(() => {
     if (user && !userType) {
       router.push("/user-type");
-    } else {
-      switch (userType) {
-        case "organization":
-          break;
-        case "donor":
-          router.push("/app/donor");
-          break;
-        case "admin":
-          router.push("/app/admin");
-          break;
-        case "fundraiser":
-          router.push("/app/fundraiser");
-          break;
-        default:
-          router.push("/");
-          break;
-      }
+    } 
+    if(userType !== 'organization'){
+      router.push("/app");
     }
   }, []);
 

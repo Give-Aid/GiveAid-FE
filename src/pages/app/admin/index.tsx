@@ -13,30 +13,17 @@ const AdminDashboard = (props: Props) => {
   useEffect(() => {
     if (user && !userType) {
       router.push("/user-type");
-    } else {
-      switch (userType) {
-        case "admin":
-          break;
-        case "donor":
-          router.push("/app/donor");
-          break;
-        case "organization":
-          router.push("/app/organization");
-          break;
-        case "fundraiser":
-          router.push("/app/fundraiser");
-          break;
-        default:
-          router.push("/");
-          break;
-      }
+    }
+
+    if(userType !== 'admin'){
+      router.push("/app");
     }
   }, []);
 
-  if (userType === "admin") {
+  if (userType !== "admin") {
     return (
-      <div className="center-page flex-col">
-        <Loader w={"20"} h={"20"} />
+      <div className="center-page">
+        <Loader w={"10"} h={"10"} />
       </div>
     );
   }
