@@ -49,9 +49,10 @@
     @apply w-[95%] md:w-[90%] mx-auto max-w-screen-xl;
   }
 
-  .center-page{
-    @apply flex justify-center items-center min-h-screen
+  .center-page {
+    @apply flex justify-center items-center min-h-[500px]
   }
+
   /* navbar */
   .nav {
     @apply container flex items-center pt-4 justify-between text-white font-[400] text-[14px] relative
@@ -136,6 +137,14 @@
     @apply fixed md:relative top-0 left-0 z-50 md:z-10 h-screen md:h-fit p-4 md:p-0 overflow-y-auto transition-transform duration-500 bg-white w-full md:border-none
   }
 
+  .sidebar-drawer {
+    @apply fixed top-0 left-0 z-50 md:z-10 h-screen transition-transform duration-500 bg-purple-50 md:bg-white w-screen
+  }
+
+  .close-drawer {
+    @apply absolute top-8 right-8 text-[30px] md:hidden hover:cursor-pointer
+  }
+
   /* payment-bar */
   .payment-bar {
     @apply fixed bottom-0 left-0 w-full bg-white border-t border-sky-500 h-[150px] overflow-y-auto removeScrollBar rounded-t-2xl z-20
@@ -144,9 +153,11 @@
   .close-bar {
     @apply absolute top-2 md:top-5 md:right-6 right-4 text-[20px] md:text-[22px] hover:cursor-pointer
   }
+
   .payment-input {
     @apply block p-2 text-[14px] w-full text-gray-900 border border-gray-300 font-medium rounded-lg ps-6 md:py-3 bg-gray-50
   }
+
   .naira-input {
     @apply absolute inset-y-0 start-0 flex items-center pointer-events-none text-[20px] ps-1
   }
@@ -160,11 +171,27 @@
     @apply text-gradient from-sky-500 to-sky-700
   }
 
-  .fundraiser-details-card{
+  .fundraiser-details-card {
     @apply rounded-lg shadow-lg md:h-[600px] w-full mx-auto border border-sky-100 flex md:flex-row flex-col
   }
-  .fundraiser-details-image{
+
+  .fundraiser-details-image {
     @apply w-full md:w-[65%] h-[600px] md:h-full object-contain bg-black rounded-t-lg md:rounded-l-lg md:rounded-tr-none
+  }
+
+  /* side-bar */
+  .side-bar {
+    @apply md:relative flex flex-shrink-0 md:w-[250px] overflow-y-auto border-r border-gray-200 flex-col items-center p-4
+  }
+
+  .p-badge {
+    @apply bg-purple-100 text-purple-800 text-[11px] font-medium me-2 px-2.5 py-0.5 rounded-full border border-purple-800 flex items-center gap-1
+  }
+  .y-badge {
+    @apply bg-yellow-100 text-yellow-800 text-[11px] font-medium me-2 px-2.5 py-0.5 rounded-full border border-yellow-800 flex items-center gap-1
+  }
+  .sidebar-link {
+    @apply py-[10px] px-4 my-2 w-full rounded-lg font-[500] flex items-center gap-3
   }
 
 }
@@ -178,7 +205,9 @@ button {
   -webkit-touch-callout: none;
 }
 
-.cl-internal-11ewti4 , .cl-avatarBox, .cl-userButtonAvatarBox{
+.cl-internal-11ewti4,
+.cl-avatarBox,
+.cl-userButtonAvatarBox {
   width: 3rem;
   height: 3rem;
 }
